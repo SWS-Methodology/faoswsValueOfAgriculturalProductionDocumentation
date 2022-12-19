@@ -36,14 +36,54 @@ The Gross Production Value validation plugin have the following workflow :
 
 From Input data --> Reference tables --> Gross Production calculations --> Final Output
 
+![Gross Production Value Plugin Data Flow  ](./images/data_flow.png){ width=150% }
 
-
-```{r echo=FALSE, fig.align = 'center'}
-knitr::include_graphics('./images/data_flow.png')
-```
 
 The inputs for the Gross Production plugin are the Agriculture Production value and International Dollar Prices. The calculation will be performed for all the items defined in the supporting table and then aggregated at item group level and countries group level.
-If the production data in not available for a certain commodity, through the function `gap_filler.R`,  the plugin will perform a three year mean of the production value of the trhee past years. If also this information are not provided, it will take the last available production value in the past.
+If the production data in not available for a certain commodity, through the function `production_gap_filler.R`,  the plugin will perform a three year mean of the production value of the three past years. If also this information are not provided, it will take the last available production value in the past.
 
 
 
+### Supporting R function
+
+Description of the supporting R function written for the plugin.
+
+#### production_gap_filler.R
+
+To provide the Value of Production plugin a more consistent dataset, some of the production data are estimated through this plugin. 
+For computation speed purpose, the plugin will detect the row with non available data (`NA`) and will attempt to fill them. The procedure follow the data flow shown in [figure](#fun_data_flow) below. 
+The function will detect the missing values and try to perform the three year average of the production value of the tree years before. If this data is not available it will scan for the first available production value in the past and will replicate its value. The plugin will return `NA` if no production values is found in the past for the specific country and commodity. 
+
+![production_gap_filler Data Flow](./images/gap_filler_df.png){#fun_data_flow width=150% }
+
+
+## Aggregates
+
+The plugin calculate the Gross Production value at different aggregation value :
+
+  - item groups and area 
+  
+  - area groups and item
+  
+  - item groups and area groups.
+  
+The items and countries group lists are obtained from the "Definitions and Standards" section of the dissemination platform website ( [FAOSTAT](https://www.fao.org/faostat/en/#data/QV) ).
+They are described and reported on the [SWS Resources section](#resources) section of this documentation.
+
+It is important that the technical unit validate those table to ensure that they are up-to-date and the right aggregations are performed. 
+
+## Run the module
+
+  1. Log-in into [SWS](https://sws.fao.org/);
+  
+  2. Select **New Query** and choose `Test - Ivan Sortino` (Provvisorio) Domain and `Gross Production Value` dataset;
+  
+  3. Select the geographicAreaM49, measuredElement, measuredItemCPC and timePointYears in which you are interested and run the query;
+  
+  4. Once you created your session select run plugin as shown in [picture below](#screenuno);
+  
+![Running plugin](./images/SWS_first.png){#screenuno scale=110% }
+
+  5. Select the parameters: base year and level of aggregation. 
+  
+![Plugin parameters](./images/SWS_sec.png){#screenuno scale=110% }  

@@ -86,7 +86,12 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="2" data-path="value-of-agricultural-production.html"><a href="value-of-agricultural-production.html"><i class="fa fa-check"></i><b>2</b> Value Of Agricultural Production</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="value-of-agricultural-production.html"><a href="value-of-agricultural-production.html#gross-production-value"><i class="fa fa-check"></i><b>2.1</b> Gross Production Value</a></li>
-<li class="chapter" data-level="2.2" data-path="value-of-agricultural-production.html"><a href="value-of-agricultural-production.html#gross-prooduction-value-plugin"><i class="fa fa-check"></i><b>2.2</b> Gross Prooduction Value Plugin</a></li>
+<li class="chapter" data-level="2.2" data-path="value-of-agricultural-production.html"><a href="value-of-agricultural-production.html#gross-prooduction-value-plugin"><i class="fa fa-check"></i><b>2.2</b> Gross Prooduction Value Plugin</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="value-of-agricultural-production.html"><a href="value-of-agricultural-production.html#supporting-r-function"><i class="fa fa-check"></i><b>2.2.1</b> Supporting R function</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="value-of-agricultural-production.html"><a href="value-of-agricultural-production.html#aggregates"><i class="fa fa-check"></i><b>2.3</b> Aggregates</a></li>
+<li class="chapter" data-level="2.4" data-path="value-of-agricultural-production.html"><a href="value-of-agricultural-production.html#run-the-module"><i class="fa fa-check"></i><b>2.4</b> Run the module</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i>SWS Resources</a></li>
 <li class="divider"></li>
@@ -142,9 +147,58 @@ Please note that livestock value of production is measured in terms of indigenou
 <h2><span class="header-section-number">2.2</span> Gross Prooduction Value Plugin<a href="value-of-agricultural-production.html#gross-prooduction-value-plugin" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The Gross Production Value validation plugin have the following workflow :</p>
 <p>From Input data –&gt; Reference tables –&gt; Gross Production calculations –&gt; Final Output</p>
-<p><img src="images/data_flow.png" width="910" style="display: block; margin: auto;" /></p>
+<div class="figure">
+<img src="images/data_flow.png" style="width:150.0%" alt="" />
+<p class="caption">Gross Production Value Plugin Data Flow</p>
+</div>
 <p>The inputs for the Gross Production plugin are the Agriculture Production value and International Dollar Prices. The calculation will be performed for all the items defined in the supporting table and then aggregated at item group level and countries group level.
-If the production data in not available for a certain commodity, through the function <code>gap_filler.R</code>, the plugin will perform a three year mean of the production value of the trhee past years. If also this information are not provided, it will take the last available production value in the past.</p>
+If the production data in not available for a certain commodity, through the function <code>production_gap_filler.R</code>, the plugin will perform a three year mean of the production value of the three past years. If also this information are not provided, it will take the last available production value in the past.</p>
+<div id="supporting-r-function" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Supporting R function<a href="value-of-agricultural-production.html#supporting-r-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Description of the supporting R function written for the plugin.</p>
+<div id="production_gap_filler.r" class="section level4 hasAnchor" number="2.2.1.1">
+<h4><span class="header-section-number">2.2.1.1</span> production_gap_filler.R<a href="value-of-agricultural-production.html#production_gap_filler.r" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To provide the Value of Production plugin a more consistent dataset, some of the production data are estimated through this plugin.
+For computation speed purpose, the plugin will detect the row with non available data (<code>NA</code>) and will attempt to fill them. The procedure follow the data flow shown in <a href="value-of-agricultural-production.html#fun_data_flow">figure</a> below.
+The function will detect the missing values and try to perform the three year average of the production value of the tree years before. If this data is not available it will scan for the first available production value in the past and will replicate its value. The plugin will return <code>NA</code> if no production values is found in the past for the specific country and commodity.</p>
+<div class="figure">
+<img src="images/gap_filler_df.png" id="fun_data_flow" style="width:150.0%" alt="" />
+<p class="caption">production_gap_filler Data Flow</p>
+</div>
+</div>
+</div>
+</div>
+<div id="aggregates" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Aggregates<a href="value-of-agricultural-production.html#aggregates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The plugin calculate the Gross Production value at different aggregation value :</p>
+<ul>
+<li><p>item groups and area</p></li>
+<li><p>area groups and item</p></li>
+<li><p>item groups and area groups.</p></li>
+</ul>
+<p>The items and countries group lists are obtained from the “Definitions and Standards” section of the dissemination platform website ( <a href="https://www.fao.org/faostat/en/#data/QV">FAOSTAT</a> ).
+They are described and reported on the <a href="resources.html#resources">SWS Resources section</a> section of this documentation.</p>
+<p>It is important that the technical unit validate those table to ensure that they are up-to-date and the right aggregations are performed.</p>
+</div>
+<div id="run-the-module" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Run the module<a href="value-of-agricultural-production.html#run-the-module" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Log-in into <a href="https://sws.fao.org/">SWS</a>;</p></li>
+<li><p>Select <strong>New Query</strong> and choose <code>Test - Ivan Sortino</code> (Provvisorio) Domain and <code>Gross Production Value</code> dataset;</p></li>
+<li><p>Select the geographicAreaM49, measuredElement, measuredItemCPC and timePointYears in which you are interested and run the query;</p></li>
+<li><p>Once you created your session select run plugin as shown in <a href="value-of-agricultural-production.html#screenuno">picture below</a>;</p></li>
+</ol>
+<div class="figure">
+<img src="images/SWS_first.png" id="screenuno" scale="110%" alt="" />
+<p class="caption">Running plugin</p>
+</div>
+<ol start="5" style="list-style-type: decimal">
+<li>Select the parameters: base year and level of aggregation.</li>
+</ol>
+<div class="figure">
+<img src="images/SWS_sec.png" id="screenuno" scale="110%" alt="" />
+<p class="caption">Plugin parameters</p>
+</div>
 
 </div>
 </div>

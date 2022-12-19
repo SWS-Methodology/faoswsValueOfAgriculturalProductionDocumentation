@@ -1,2 +1,234 @@
 # SWS Resources {#resources .unnumbered}
 
+This section enclose a detailed description of all the auxiliary resources needed by the modules to accomplish their calculation. It includes definition of code lists, used to define the various dimensions of data sets, and data tables. 
+
+## Code Lists
+
+[To Do]
+
+## Data Tables {#datatables}
+
+Datatables are flexible tool made available inside the Statistical Working System to store a wide range of usefull information. They indeed provide a strong support to R module to record countries and items groups composition, to map conversion factors and to store different type of data. 
+Variable names (column names) of datatables are more flexible compared to those of datasets, they can accommodate all kind of names and are not strictly constrained by code lists or by the domain in which they are stored.
+Below a detailed description of all the datatable used in the Value of Production module. 
+
+
+### FAOSTAT production data
+
+  * **Datatable :** `FAOSTAT production data`
+  * **Domain :** `Test - Ivan Sortino` (Provvisorio)
+  * **Usage :** Used to import production data from FAOSTAT to SWS for validation procedure. This datatable will be dismissed after the technical team import the production data into the `Disseminated Dataset` .
+  
+  <br>
+
+```{r echo=FALSE}
+name = c('Domain Code',
+'Domain',
+'Area Code (M49)',
+'Area',
+'Element Code',
+'Element',
+'Item Code (CPC)',
+'Item',	
+'Year Code',
+'Year',
+'Unit',
+'Value',
+'Flag',
+'Flag Description')
+
+desc = c(
+'Domain Code of the dissemination platform',
+'Domain name of the dissemination platform',
+'Area Code M49',
+'Area name',
+'Element code for production',
+'Element name',
+'Item CPC code',
+'Item name',
+'Year code selected',
+'Year selected',
+'Tonnes',
+'Value of production',
+'Flag in the dissemination platform',
+'Flag description'
+)
+
+
+knitr::kable(data.frame(Field= name, Description= desc ) , caption = "FAOSTAT Production data field summary.", col.names = c("Field", "Description") )
+
+```
+
+
+### Supplementary International Dollar
+
+  * **Datatable :** `Supplementary International Dollar`
+  * **Domain :** `Test - Ivan Sortino` (Provvisorio)
+  * **Usage :** Used to import International Dollar from FAOSTAT to SWS for validation procedure.
+  
+  <br>
+
+```{r echo=FALSE}
+name = c(
+"Domain Code",
+"Area Code (M49)",
+"Area",
+"Element Code",
+"Element",
+"Item Code",
+"Item",
+"Year",
+"Unit",
+"Value"
+)
+
+desc = c(
+'Domain Code of the dissemination platform',
+'Area Code M49',
+'Area name',
+'Element code for production',
+'Element name [Int.$/tonnes]',
+'FAOSTAT item code',
+'Item name',
+'Year selected',
+'International Dollar/Tonnes',
+'Price'
+)
+
+
+knitr::kable(data.frame(Field= name, Description= desc ) , caption = "International Dollar data field summary.", col.names = c("Field", "Description") )
+
+```
+
+### Value of Production - Country/region
+
+  * **Datatable :** `Value of Production - country/region`
+  * **Domain :** `Test - Ivan Sortino` (Provvisorio)
+  * **Usage :** Used to define the countries for which the Value of Production is calculated.
+  
+  <br>
+
+```{r echo=FALSE}
+name = c(
+"Country Code",
+"Country",
+"M49_code",
+"ISO2_code",
+"ISO3_code"
+
+)
+
+desc = c(
+'FAOSTAT country code',
+'Name of the country',
+'M49 country code',
+'ISO2 country code',
+'ISO3 country code'
+
+)
+
+
+knitr::kable(data.frame(Field= name, Description= desc ) , caption = "Country list field summary.", col.names = c("Field", "Description") )
+
+```
+
+
+### Value of Production - Country Group
+
+  * **Datatable :** `Value of Production - Country Group`
+  * **Domain :** `Test - Ivan Sortino` (Provvisorio)
+  * **Usage :** Used to define the countries groups for aggregations.
+  
+  <br>
+
+```{r echo=FALSE}
+name = c(
+"Country group code",
+"Country group",
+"Country Code",
+"Country",
+"M49_code",
+"ISO2_code",
+"ISO3_code"
+
+)
+
+desc = c(
+'FAOSTAT country group code',
+'FAOSTAT country group name',
+'FAOSTAT country code',
+'Name of the country',
+'M49 country code',
+'ISO2 country code',
+'ISO3 country code'
+
+)
+
+
+knitr::kable(data.frame(Field= name, Description= desc ) , caption = "Country group list field summary.", col.names = c("Field", "Description") )
+
+```
+
+
+
+
+### Value of Production - Item
+
+  * **Datatable :** `Value of Production - Item`
+  * **Domain :** `Test - Ivan Sortino` (Provvisorio)
+  * **Usage :** Used to define the items list for which the Value of Production is calculated .
+  
+  <br>
+
+```{r echo=FALSE}
+name = c(
+"Item Code",
+"Item Name",
+"Description",
+"CPC code"
+)
+
+desc = c(
+'FAOSTAT Item code',
+'Name of the item',
+'Description of the item',
+'Corresponding CPC item code'
+)
+
+
+knitr::kable(data.frame(Field= name, Description= desc ) , caption = "Item list data field summary.", col.names = c("Field", "Description") )
+
+```
+
+
+### Value of Production - Item group
+
+  * **Datatable :** `Value of Production - Item group`
+  * **Domain :** `Test - Ivan Sortino` (Provvisorio)
+  * **Usage :** Used to define the items group list for items aggregations .
+  
+  <br>
+
+```{r echo=FALSE}
+name = c(
+"Item Group Code",
+"Item Group",
+"Item Code",
+"Item Name",
+"factor",
+"CPC code"
+)
+
+desc = c(
+'FAOSTAT Item group code',
+'Name of the item group',
+'FAOSTAT item code',
+'Name of the item',
+'Factor for item aggregation',
+'Corresponding CPC item code'
+)
+
+
+knitr::kable(data.frame(Field= name, Description= desc ) , caption = "Item list data field summary.", col.names = c("Field", "Description"), label = "item_group" )
+
+```

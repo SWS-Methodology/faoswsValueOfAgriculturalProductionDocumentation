@@ -5,25 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Value of Agricultural Production</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="description" content="Value of Agricultural Production" />
   <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Value of Agricultural Production" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Value of Agricultural Production" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  
   
 
 <meta name="author" content="Ivan Sortino" />
@@ -86,9 +80,24 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="2" data-path="value-of-agricultural-production.html"><a href="value-of-agricultural-production.html"><i class="fa fa-check"></i><b>2</b> Value Of Agricultural Production</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="value-of-agricultural-production.html"><a href="value-of-agricultural-production.html#gross-production-value"><i class="fa fa-check"></i><b>2.1</b> Gross Production Value</a></li>
-<li class="chapter" data-level="2.2" data-path="value-of-agricultural-production.html"><a href="value-of-agricultural-production.html#gross-prooduction-value-plugin"><i class="fa fa-check"></i><b>2.2</b> Gross Prooduction Value Plugin</a></li>
+<li class="chapter" data-level="2.2" data-path="value-of-agricultural-production.html"><a href="value-of-agricultural-production.html#gross-prooduction-value-plugin"><i class="fa fa-check"></i><b>2.2</b> Gross Prooduction Value Plugin</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="value-of-agricultural-production.html"><a href="value-of-agricultural-production.html#supporting-r-function"><i class="fa fa-check"></i><b>2.2.1</b> Supporting R function</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i>SWS Resources</a></li>
+<li class="chapter" data-level="2.3" data-path="value-of-agricultural-production.html"><a href="value-of-agricultural-production.html#aggregates"><i class="fa fa-check"></i><b>2.3</b> Aggregates</a></li>
+<li class="chapter" data-level="2.4" data-path="value-of-agricultural-production.html"><a href="value-of-agricultural-production.html#run-the-module"><i class="fa fa-check"></i><b>2.4</b> Run the module</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i>SWS Resources</a>
+<ul>
+<li class="chapter" data-level="2.5" data-path="resources.html"><a href="resources.html#code-lists"><i class="fa fa-check"></i><b>2.5</b> Code Lists</a></li>
+<li class="chapter" data-level="2.6" data-path="resources.html"><a href="resources.html#data-tables"><i class="fa fa-check"></i><b>2.6</b> Data Tables</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="resources.html"><a href="resources.html#faostat-production-data"><i class="fa fa-check"></i><b>2.6.1</b> FAOSTAT production data</a></li>
+<li class="chapter" data-level="2.6.2" data-path="resources.html"><a href="resources.html#supplementary-international-dollar"><i class="fa fa-check"></i><b>2.6.2</b> Supplementary International Dollar</a></li>
+<li class="chapter" data-level="2.6.3" data-path="resources.html"><a href="resources.html#value-of-production---item"><i class="fa fa-check"></i><b>2.6.3</b> Value of Production - Item</a></li>
+<li class="chapter" data-level="2.6.4" data-path="resources.html"><a href="resources.html#value-of-production---item-group"><i class="fa fa-check"></i><b>2.6.4</b> Value of Production - Item group</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -121,19 +130,19 @@ To validate the procedure implemented, the calculations are performed on the alr
 <h2><span class="header-section-number">1.1</span> Build up data for validation of procedure<a href="index.html#build-up-data-for-validation-of-procedure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For the validation of the existing procedure data are imported from different FAOSTAT domain. For instance:</p>
 <ul>
-<li><p>Production data are obtained from FAOSTAT “<em>Crops and livestock products</em>” section of “<em>Production</em>” domain and uploaded on a SWS datatable named “<em>FAOSTAT production data</em>”;</p></li>
-<li><p>International prices are obtained from the FAOSTAT “<em>Producer Prices - Supplementary</em>” dataset and uploaded on the SWS “<em>Supplementary International Dollar</em>” datatable;</p></li>
-<li><p>Country list is obtained from <em>Definitions and standards</em> section of the FAOSTAT “Value of Production” dataset and uploaded into the “<em>Value of production - country/region</em>” SWS datatable;</p></li>
-<li><p>Country group list is obtained from <em>Definitions and standards</em> section of the FAOSTAT “Value of Production” dataset and uploaded into the “<em>Value of Production - Country Group</em>” SWS datatable;</p></li>
-<li><p>Item list is obtained from <em>Definitions and standards</em> section of the FAOSTAT “Value of Production” dataset and uploaded into the “<em>Value of Production - Item</em>” SWS datatable;</p></li>
-<li><p>Item group list is obtained from <em>Definitions and standards</em> section of the FAOSTAT “Value of Production” dataset and uploaded into the “<em>Value of Production - Item group</em>” SWS datatable;</p></li>
+<li><p>Production data are obtained from FAOSTAT <a href="https://www.fao.org/faostat/en/#data/QCL">“<em>Crops and livestock products</em>”</a> domain and uploaded on SWS <code>"FAOSTAT production data"</code> datatable;</p></li>
+<li><p>International prices are obtained from FAOSTAT <a href="http://fenix.fao.org/faostat/internal/en/#data/PX">“<em>Producer Prices - Supplementary</em>”</a> dataset and uploaded on SWS <code>"Supplementary International Dollar"</code> datatable;</p></li>
+<li><p>Country list is obtained from <em>Definitions and standards</em> section of FAOSTAT <a href="https://www.fao.org/faostat/en/#data/QV">“Value of Production”</a> dataset and uploaded into the <code>"Value of production - country/region"</code> SWS datatable;</p></li>
+<li><p>Country group list is obtained from <em>Definitions and standards</em> section of FAOSTAT <a href="https://www.fao.org/faostat/en/#data/QV">“Value of Production”</a> dataset and uploaded into the <code>"Value of Production - Country Group"</code> SWS datatable;</p></li>
+<li><p>Item list is obtained from <em>Definitions and standards</em> section of FAOSTAT <a href="https://www.fao.org/faostat/en/#data/QV">“Value of Production”</a> dataset and uploaded into the <code>"Value of Production - Item"</code> SWS datatable;</p></li>
+<li><p>Item group list is obtained from <em>Definitions and standards</em> section of FAOSTAT <a href="https://www.fao.org/faostat/en/#data/QV">“Value of Production”</a> dataset and uploaded into the <code>"Value of Production - Item group"</code> SWS datatable;</p></li>
 </ul>
 <p>A detailed description of each supporting datatable is reported in <a href="resources.html#resources">SWS resources</a> section of this documentation.</p>
 <p>Since historical disseminated data may differ from those present on the Statistical Working System, it is necessary to make it available on SWS. To do this the CSI-SWS technical team need to retrieve the data from the the dissemination platform (FAOSTAT) and update it on <code>Disseminated Domain</code>. Once the procedure is done, Production and Prices data will be in line with disseminated one and the calculation should match the historical data.</p>
 </div>
 <div id="sws-implementation-procedure" class="section level2 hasAnchor" number="1.2">
 <h2><span class="header-section-number">1.2</span> SWS implementation procedure<a href="index.html#sws-implementation-procedure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Once the procedure have been validated, the module will pull its data directly within the woriking system database. For instance :</p>
+<p>Once the procedure have been validated, the module will pull its data directly within the working system database. For instance :</p>
 <ul>
 <li><p>Production data are stored in <code>agriculture</code> domain, dataset <code>aproduction</code>;</p></li>
 <li><p>Prices data are stored in <code>producer prices</code> domain, dataset <code>international dollar prices</code>.</p></li>
