@@ -1,0 +1,49 @@
+# Value Of Agricultural Production 
+
+item classifications
+Production concept
+Prices at farm gate
+
+## Gross Production Value 
+
+Value of gross production is calculated by multiplying gross production (in tonnes) by output prices at farm gate. In this phase of aggregation the overall value of production in considered. Indeed a double-counting error rise if we do not remove seed and feed used 
+
+Value of gross production has been compiled by multiplying gross production in physical
+terms by output prices at farm gate. Thus, value of production measures production in
+monetary terms at the farm gate level. Since intermediate uses within the agricultural sector
+(seed and feed) have not been subtracted from production data, this value of production
+aggregate refers to the notion of "gross production".
+Value of gross production is provided in both current and constant terms and is expressed in
+US dollars and Standard Local Currency (SLC). The current value of production measures
+value in the prices relating to the period being measured. Thus, it represents the market value
+of food and agricultural products at the time they were produced. Knowing this figure is
+helpful in understanding exactly what was happening within a given economy at that point in
+time. Often, this information can help explain economic trends that emerged in later periods
+and why they took place. Value of production in constant terms is derived using the average
+prices of a selected year or years, known as the base period. Constant price series can be used
+to show how the quantity or volume of products has changed, and are often referred to as
+volume measures. The ratio of the current and constant price series gives a measure of price
+movements.
+US dollar figures for value of gross production are converted from local currencies using
+official exchange rates as prevailing in the respective years. The SLC of a country is the local
+currency prevailing in the latest year. Expressing data series in one uniform currency is useful
+because it avoids the influence of revaluation in local currency, if any, on value of production.
+Please note that livestock value of production is measured in terms of indigenous meat.
+
+## Gross Prooduction Value Plugin 
+
+The Gross Production Value validation plugin have the following workflow :
+
+From Input data --> Reference tables --> Gross Production calculations --> Final Output
+
+
+
+```{r echo=FALSE, fig.align = 'center'}
+knitr::include_graphics('./images/data_flow.png')
+```
+
+The inputs for the Gross Production plugin are the Agriculture Production value and International Dollar Prices. The calculation will be performed for all the items defined in the supporting table and then aggregated at item group level and countries group level.
+If the production data in not available for a certain commodity, through the function `gap_filler.R`,  the plugin will perform a three year mean of the production value of the trhee past years. If also this information are not provided, it will take the last available production value in the past.
+
+
+
