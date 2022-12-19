@@ -12,7 +12,7 @@
   <meta property="og:type" content="book" />
   
   
-  
+  <meta name="github-repo" content="https://github.com/IvanSortino97/ValueOfProduction" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Value of Agricultural Production" />
@@ -90,12 +90,14 @@
 <li class="chapter" data-level="" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i>SWS Resources</a>
 <ul>
 <li class="chapter" data-level="2.5" data-path="resources.html"><a href="resources.html#code-lists"><i class="fa fa-check"></i><b>2.5</b> Code Lists</a></li>
-<li class="chapter" data-level="2.6" data-path="resources.html"><a href="resources.html#data-tables"><i class="fa fa-check"></i><b>2.6</b> Data Tables</a>
+<li class="chapter" data-level="2.6" data-path="resources.html"><a href="resources.html#datatables"><i class="fa fa-check"></i><b>2.6</b> Data Tables</a>
 <ul>
 <li class="chapter" data-level="2.6.1" data-path="resources.html"><a href="resources.html#faostat-production-data"><i class="fa fa-check"></i><b>2.6.1</b> FAOSTAT production data</a></li>
 <li class="chapter" data-level="2.6.2" data-path="resources.html"><a href="resources.html#supplementary-international-dollar"><i class="fa fa-check"></i><b>2.6.2</b> Supplementary International Dollar</a></li>
-<li class="chapter" data-level="2.6.3" data-path="resources.html"><a href="resources.html#value-of-production---item"><i class="fa fa-check"></i><b>2.6.3</b> Value of Production - Item</a></li>
-<li class="chapter" data-level="2.6.4" data-path="resources.html"><a href="resources.html#value-of-production---item-group"><i class="fa fa-check"></i><b>2.6.4</b> Value of Production - Item group</a></li>
+<li class="chapter" data-level="2.6.3" data-path="resources.html"><a href="resources.html#value-of-production---countryregion"><i class="fa fa-check"></i><b>2.6.3</b> Value of Production - Country/region</a></li>
+<li class="chapter" data-level="2.6.4" data-path="resources.html"><a href="resources.html#value-of-production---country-group"><i class="fa fa-check"></i><b>2.6.4</b> Value of Production - Country Group</a></li>
+<li class="chapter" data-level="2.6.5" data-path="resources.html"><a href="resources.html#value-of-production---item"><i class="fa fa-check"></i><b>2.6.5</b> Value of Production - Item</a></li>
+<li class="chapter" data-level="2.6.6" data-path="resources.html"><a href="resources.html#value-of-production---item-group"><i class="fa fa-check"></i><b>2.6.6</b> Value of Production - Item group</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -124,8 +126,9 @@
 </div>
 <div id="about" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> About<a href="index.html#about" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>The aim of this module is to import into the Statistical Working System (SWS) the procedure to calculate the Value of Agricultural Production already in use in FAO.
-To validate the procedure implemented, the calculations are performed on the already disseminated data in order to obtain the same results as before. Data are imported from different FAOSTAT domain into some SWS datatable and then the calculation are done. After the validation of the procedure and the matching of the obtained results the calculations will be performed on the data pulled from the corresponding dataset present on SWS.</p>
+<p>The aim of this module is to calculate the Value of Agriculture production within the Statistical Working System (SWS). The implementation of the procedure needs to be validated by matching the results disseminated by FAO until now.
+In order to perform the validation, disseminated data needs to be available within the SWS. Data are imported from different FAOSTAT domain into SWS <em>Dissiminated Dataset</em>.
+After the validation, the procedure will be applied on the corresponding production value and prices presents within the system and stored in a new “Value of Production” dataset.</p>
 <div id="build-up-data-for-validation-of-procedure" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Build up data for validation of procedure<a href="index.html#build-up-data-for-validation-of-procedure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For the validation of the existing procedure data are imported from different FAOSTAT domain. For instance:</p>
@@ -137,7 +140,7 @@ To validate the procedure implemented, the calculations are performed on the alr
 <li><p>Item list is obtained from <em>Definitions and standards</em> section of FAOSTAT <a href="https://www.fao.org/faostat/en/#data/QV">“Value of Production”</a> dataset and uploaded into the <code>"Value of Production - Item"</code> SWS datatable;</p></li>
 <li><p>Item group list is obtained from <em>Definitions and standards</em> section of FAOSTAT <a href="https://www.fao.org/faostat/en/#data/QV">“Value of Production”</a> dataset and uploaded into the <code>"Value of Production - Item group"</code> SWS datatable;</p></li>
 </ul>
-<p>A detailed description of each supporting datatable is reported in <a href="resources.html#resources">SWS resources</a> section of this documentation.</p>
+<p>A detailed description of each supporting datatable is reported in <a href="resources.html#datatables">SWS resources</a> section of this documentation.</p>
 <p>Since historical disseminated data may differ from those present on the Statistical Working System, it is necessary to make it available on SWS. To do this the CSI-SWS technical team need to retrieve the data from the the dissemination platform (FAOSTAT) and update it on <code>Disseminated Domain</code>. Once the procedure is done, Production and Prices data will be in line with disseminated one and the calculation should match the historical data.</p>
 </div>
 <div id="sws-implementation-procedure" class="section level2 hasAnchor" number="1.2">

@@ -1,40 +1,42 @@
 # Value Of Agricultural Production 
 
-item classifications
-Production concept
-Prices at farm gate
+Production and producer prices are defined according to established FAO standards. For instance the concept of production may change according to the specific commodity and can be summarized as follows: 
+
+**Crop production data** refer to the actual harvested production from field or orchard and gardens, excluding harvesting and threshing losses and the part of crop non harvested. Production includes also the quantities sold in the market (marketed production) and the quantities consumed by the producers (autoconsumption).
+Crop production is stored in metric tonnes.
+
+**Livestock production data** is more commodity-specific, evaluated by weights and adjusted by conversion factors to provide comparable data.
+
+**Producer prices** refers to the prices received by farmers per unit, usually a metric ton of product. The producer prices are also often defined "farm gate prices", and should includes all the costs incurred by the farmers to produce the commodity and its own profit.
+
+Various approaches are considered for the definition of _Agricultural Production_, spacing from _gross_ concept to _net_ depending on the treatment of the double-counting error. The latter is defined as the error that incur when we do not remove inputs used during the production cycle. 
+Agricultural inputs are indeed divided in three categories :
+
+  1. commodities required as inputs for their own production, such as seed or hatching eggs;
+  2. Inputs of other agricultural commodities as those used for feeding livestock;
+  
+  3. Non-agricultural inputs such fertilizers or pesticides.
+  
+
 
 ## Gross Production Value 
 
-Value of gross production is calculated by multiplying gross production (in tonnes) by output prices at farm gate. In this phase of aggregation the overall value of production in considered. Indeed a double-counting error rise if we do not remove seed and feed used 
+Value of gross production is calculated by multiplying gross production (in tonnes) by production prices at farm gate. In this phase of aggregation the overall value of production in considered. Indeed a double-counting error rise if we do not remove seeds and feed used within the agricultural sector, we refer then to this value as "gross production".
+Value of gross production is provided in both International Dollar [Int.$] and Standard Local Currency [SLC].
+Value of production expressed in constant terms is derived using the average
+prices of three selected years, named base period. Constant price series shows the changes in quantity or volume of the product changes over time.
 
-Value of gross production has been compiled by multiplying gross production in physical
-terms by output prices at farm gate. Thus, value of production measures production in
-monetary terms at the farm gate level. Since intermediate uses within the agricultural sector
-(seed and feed) have not been subtracted from production data, this value of production
-aggregate refers to the notion of "gross production".
-Value of gross production is provided in both current and constant terms and is expressed in
-US dollars and Standard Local Currency (SLC). The current value of production measures
-value in the prices relating to the period being measured. Thus, it represents the market value
-of food and agricultural products at the time they were produced. Knowing this figure is
-helpful in understanding exactly what was happening within a given economy at that point in
-time. Often, this information can help explain economic trends that emerged in later periods
-and why they took place. Value of production in constant terms is derived using the average
-prices of a selected year or years, known as the base period. Constant price series can be used
-to show how the quantity or volume of products has changed, and are often referred to as
-volume measures. The ratio of the current and constant price series gives a measure of price
-movements.
-US dollar figures for value of gross production are converted from local currencies using
-official exchange rates as prevailing in the respective years. The SLC of a country is the local
-currency prevailing in the latest year. Expressing data series in one uniform currency is useful
-because it avoids the influence of revaluation in local currency, if any, on value of production.
-Please note that livestock value of production is measured in terms of indigenous meat.
+[...] 
+
+<br>
 
 ## Gross Prooduction Value Plugin 
 
-The Gross Production Value validation plugin have the following workflow :
+The Gross Production Value plugin have the following workflow :
+<br>
 
-From Input data --> Reference tables --> Gross Production calculations --> Final Output
+From **Input data --> Reference tables --> Gross Production calculations --> Final Output**
+<br>
 
 ![Gross Production Value Plugin Data Flow  ](./images/data_flow.png){ width=150% }
 

@@ -10,17 +10,19 @@ output:
 latex_engine: tinytex
 #documentclass: book
 #bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
+url: https://ivansortino97.github.io/ValueOfProduction/
 # cover-image: path to the social sharing image like images/cover.jpg
 description:
 #link-citations: yes
-#github-repo: rstudio/bookdown-demo
+github-repo: https://github.com/IvanSortino97/ValueOfProduction
 ---
 
 # About
 
-The aim of this module is to import into the Statistical Working System (SWS) the procedure to calculate the Value of Agricultural Production already in use in FAO. 
-To validate the procedure implemented, the calculations are performed on the already disseminated data in order to obtain the same results as before. Data are imported from different FAOSTAT domain into some SWS datatable and then the calculation are done. After the validation of the procedure and the matching of the obtained results the calculations will be performed on the data pulled from the corresponding dataset present on SWS.
+The aim of this module is to calculate the Value of Agriculture production within the Statistical Working System (SWS). The implementation of the procedure needs to be validated by matching the results disseminated by FAO until now. 
+In order to perform the validation, disseminated data needs to be available within the SWS. Data are imported from different FAOSTAT domain into SWS _Dissiminated Dataset_. 
+After the validation, the procedure will be applied on the corresponding production value and prices presents within the system and stored in a new "Value of Production" dataset.
+
 
 ## Build up data for validation of procedure
 
@@ -38,7 +40,7 @@ For the validation of the existing procedure data are imported from different FA
   
   - Item group list is obtained from _Definitions and standards_ section of FAOSTAT ["Value of Production"](https://www.fao.org/faostat/en/#data/QV) dataset and uploaded into the `"Value of Production - Item group"` SWS datatable;
   
-A detailed description of each supporting datatable is reported in [SWS resources](#resources) section of this documentation. 
+A detailed description of each supporting datatable is reported in [SWS resources](#datatables) section of this documentation. 
 
 Since historical disseminated data may differ from those present on the Statistical Working System, it is necessary to make it available on SWS. To do this the CSI-SWS technical team need to retrieve the data from the the dissemination platform (FAOSTAT) and update it on `Disseminated Domain`. Once the procedure is done, Production and Prices data will be in line with disseminated one and the calculation should match the historical data.
 

@@ -12,6 +12,7 @@ Datatables are flexible tool made available inside the Statistical Working Syste
 Variable names (column names) of datatables are more flexible compared to those of datasets, they can accommodate all kind of names and are not strictly constrained by code lists or by the domain in which they are stored.
 Below a detailed description of all the datatable used in the Value of Production module. 
 
+<br>
 
 ### FAOSTAT production data
 
@@ -58,7 +59,7 @@ desc = c(
 knitr::kable(data.frame(Field= name, Description= desc ) , caption = "FAOSTAT Production data field summary.", col.names = c("Field", "Description") )
 
 ```
-
+<br>
 
 ### Supplementary International Dollar
 
@@ -100,6 +101,8 @@ knitr::kable(data.frame(Field= name, Description= desc ) , caption = "Internatio
 
 ```
 
+<br>
+
 ### Value of Production - Country/region
 
   * **Datatable :** `Value of Production - country/region`
@@ -131,7 +134,7 @@ desc = c(
 knitr::kable(data.frame(Field= name, Description= desc ) , caption = "Country list field summary.", col.names = c("Field", "Description") )
 
 ```
-
+<br>
 
 ### Value of Production - Country Group
 
@@ -169,7 +172,7 @@ knitr::kable(data.frame(Field= name, Description= desc ) , caption = "Country gr
 
 ```
 
-
+<br>
 
 
 ### Value of Production - Item
@@ -200,6 +203,7 @@ knitr::kable(data.frame(Field= name, Description= desc ) , caption = "Item list 
 
 ```
 
+<br>
 
 ### Value of Production - Item group
 
@@ -229,6 +233,6 @@ desc = c(
 )
 
 
-knitr::kable(data.frame(Field= name, Description= desc ) , caption = "Item list data field summary.", col.names = c("Field", "Description"), label = "item_group" )
+knitr::kable(data.frame(Field= name, Description= desc ) , caption = "Item list data field summary.", col.names = c("Field", "Description") )
 
 ```

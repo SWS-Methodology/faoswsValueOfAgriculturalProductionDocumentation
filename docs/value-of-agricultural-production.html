@@ -5,25 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Value Of Agricultural Production | Value of Agricultural Production</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="description" content="Chapter 2 Value Of Agricultural Production | Value of Agricultural Production" />
   <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Value Of Agricultural Production | Value of Agricultural Production" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
   
+  <meta name="github-repo" content="https://github.com/IvanSortino97/ValueOfProduction" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 2 Value Of Agricultural Production | Value of Agricultural Production" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  
   
 
 <meta name="author" content="Ivan Sortino" />
@@ -78,7 +72,7 @@ set in the _output.yml file.</p>" />
 <li><a href="./">Value_of_Production</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> cover-image: path to the social sharing image like images/cover.jpg</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#build-up-data-for-validation-of-procedure"><i class="fa fa-check"></i><b>1.1</b> Build up data for validation of procedure</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#sws-implementation-procedure"><i class="fa fa-check"></i><b>1.2</b> SWS implementation procedure</a></li>
@@ -93,7 +87,19 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="2.3" data-path="value-of-agricultural-production.html"><a href="value-of-agricultural-production.html#aggregates"><i class="fa fa-check"></i><b>2.3</b> Aggregates</a></li>
 <li class="chapter" data-level="2.4" data-path="value-of-agricultural-production.html"><a href="value-of-agricultural-production.html#run-the-module"><i class="fa fa-check"></i><b>2.4</b> Run the module</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i>SWS Resources</a></li>
+<li class="chapter" data-level="" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i>SWS Resources</a>
+<ul>
+<li class="chapter" data-level="2.5" data-path="resources.html"><a href="resources.html#code-lists"><i class="fa fa-check"></i><b>2.5</b> Code Lists</a></li>
+<li class="chapter" data-level="2.6" data-path="resources.html"><a href="resources.html#datatables"><i class="fa fa-check"></i><b>2.6</b> Data Tables</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="resources.html"><a href="resources.html#faostat-production-data"><i class="fa fa-check"></i><b>2.6.1</b> FAOSTAT production data</a></li>
+<li class="chapter" data-level="2.6.2" data-path="resources.html"><a href="resources.html#supplementary-international-dollar"><i class="fa fa-check"></i><b>2.6.2</b> Supplementary International Dollar</a></li>
+<li class="chapter" data-level="2.6.3" data-path="resources.html"><a href="resources.html#value-of-production---countryregion"><i class="fa fa-check"></i><b>2.6.3</b> Value of Production - Country/region</a></li>
+<li class="chapter" data-level="2.6.4" data-path="resources.html"><a href="resources.html#value-of-production---country-group"><i class="fa fa-check"></i><b>2.6.4</b> Value of Production - Country Group</a></li>
+<li class="chapter" data-level="2.6.5" data-path="resources.html"><a href="resources.html#value-of-production---item"><i class="fa fa-check"></i><b>2.6.5</b> Value of Production - Item</a></li>
+<li class="chapter" data-level="2.6.6" data-path="resources.html"><a href="resources.html#value-of-production---item-group"><i class="fa fa-check"></i><b>2.6.6</b> Value of Production - Item group</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -115,38 +121,33 @@ set in the _output.yml file.</p>" />
             <section class="normal" id="section-">
 <div id="value-of-agricultural-production" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Value Of Agricultural Production<a href="value-of-agricultural-production.html#value-of-agricultural-production" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>item classifications
-Production concept
-Prices at farm gate</p>
+<p>Production and producer prices are defined according to established FAO standards. For instance the concept of production may change according to the specific commodity and can be summarized as follows:</p>
+<p><strong>Crop production data</strong> refer to the actual harvested production from field or orchard and gardens, excluding harvesting and threshing losses and the part of crop non harvested. Production includes also the quantities sold in the market (marketed production) and the quantities consumed by the producers (autoconsumption).
+Crop production is stored in metric tonnes.</p>
+<p><strong>Livestock production data</strong> is more commodity-specific, evaluated by weights and adjusted by conversion factors to provide comparable data.</p>
+<p><strong>Producer prices</strong> refers to the prices received by farmers per unit, usually a metric ton of product. The producer prices are also often defined “farm gate prices”, and should includes all the costs incurred by the farmers to produce the commodity and its own profit.</p>
+<p>Various approaches are considered for the definition of <em>Agricultural Production</em>, spacing from <em>gross</em> concept to <em>net</em> depending on the treatment of the double-counting error. The latter is defined as the error that incur when we do not remove inputs used during the production cycle.
+Agricultural inputs are indeed divided in three categories :</p>
+<ol style="list-style-type: decimal">
+<li><p>commodities required as inputs for their own production, such as seed or hatching eggs;</p></li>
+<li><p>Inputs of other agricultural commodities as those used for feeding livestock;</p></li>
+<li><p>Non-agricultural inputs such fertilizers or pesticides.</p></li>
+</ol>
 <div id="gross-production-value" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Gross Production Value<a href="value-of-agricultural-production.html#gross-production-value" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Value of gross production is calculated by multiplying gross production (in tonnes) by output prices at farm gate. In this phase of aggregation the overall value of production in considered. Indeed a double-counting error rise if we do not remove seed and feed used</p>
-<p>Value of gross production has been compiled by multiplying gross production in physical
-terms by output prices at farm gate. Thus, value of production measures production in
-monetary terms at the farm gate level. Since intermediate uses within the agricultural sector
-(seed and feed) have not been subtracted from production data, this value of production
-aggregate refers to the notion of “gross production”.
-Value of gross production is provided in both current and constant terms and is expressed in
-US dollars and Standard Local Currency (SLC). The current value of production measures
-value in the prices relating to the period being measured. Thus, it represents the market value
-of food and agricultural products at the time they were produced. Knowing this figure is
-helpful in understanding exactly what was happening within a given economy at that point in
-time. Often, this information can help explain economic trends that emerged in later periods
-and why they took place. Value of production in constant terms is derived using the average
-prices of a selected year or years, known as the base period. Constant price series can be used
-to show how the quantity or volume of products has changed, and are often referred to as
-volume measures. The ratio of the current and constant price series gives a measure of price
-movements.
-US dollar figures for value of gross production are converted from local currencies using
-official exchange rates as prevailing in the respective years. The SLC of a country is the local
-currency prevailing in the latest year. Expressing data series in one uniform currency is useful
-because it avoids the influence of revaluation in local currency, if any, on value of production.
-Please note that livestock value of production is measured in terms of indigenous meat.</p>
+<p>Value of gross production is calculated by multiplying gross production (in tonnes) by production prices at farm gate. In this phase of aggregation the overall value of production in considered. Indeed a double-counting error rise if we do not remove seeds and feed used within the agricultural sector, we refer then to this value as “gross production”.
+Value of gross production is provided in both International Dollar [Int.$] and Standard Local Currency [SLC].
+Value of production expressed in constant terms is derived using the average
+prices of three selected years, named base period. Constant price series shows the changes in quantity or volume of the product changes over time.</p>
+<p>[…]</p>
+<p><br></p>
 </div>
 <div id="gross-prooduction-value-plugin" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Gross Prooduction Value Plugin<a href="value-of-agricultural-production.html#gross-prooduction-value-plugin" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The Gross Production Value validation plugin have the following workflow :</p>
-<p>From Input data –&gt; Reference tables –&gt; Gross Production calculations –&gt; Final Output</p>
+<p>The Gross Production Value plugin have the following workflow :
+<br></p>
+<p>From <strong>Input data –&gt; Reference tables –&gt; Gross Production calculations –&gt; Final Output</strong>
+<br></p>
 <div class="figure">
 <img src="images/data_flow.png" style="width:150.0%" alt="" />
 <p class="caption">Gross Production Value Plugin Data Flow</p>
