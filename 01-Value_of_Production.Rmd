@@ -53,10 +53,11 @@ Description of the supporting R function written for the plugin.
 #### production_gap_filler.R
 
 To provide the Value of Production plugin a more consistent dataset, some of the production data are estimated through this plugin. 
-For computation speed purpose, the plugin will detect the row with non available data (`NA`) and will attempt to fill them. The procedure follow the data flow shown in [figure](#fun_data_flow) below. 
-The function will detect the missing values and try to perform the three year average of the production value of the tree years before. If this data is not available it will scan for the first available production value in the past and will replicate its value. The plugin will return `NA` if no production values is found in the past for the specific country and commodity. 
+For computation speed purpose, the plugin will detect only rows with non available data (`NA`) and will attempt to fill them. The procedure follows data flow shown in [figure](#fun_data_flow) below. 
+The function will detect the missing values and try to perform a three year average of the production value of the three years before. If this data is not available it will scan for the first available production value in the past and will replicate its value. The plugin will return `NA` if no production values is found in the past for the specific country and commodity. 
 
 ![production_gap_filler Data Flow](./images/gap_filler_df.png){#fun_data_flow width=150% }
+
 
 
 ## Aggregates

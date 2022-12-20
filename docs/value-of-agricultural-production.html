@@ -23,7 +23,7 @@
 <meta name="author" content="Ivan Sortino" />
 
 
-<meta name="date" content="2022-12-19" />
+<meta name="date" content="2022-12-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -160,8 +160,8 @@ If the production data in not available for a certain commodity, through the fun
 <div id="production_gap_filler.r" class="section level4 hasAnchor" number="2.2.1.1">
 <h4><span class="header-section-number">2.2.1.1</span> production_gap_filler.R<a href="value-of-agricultural-production.html#production_gap_filler.r" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>To provide the Value of Production plugin a more consistent dataset, some of the production data are estimated through this plugin.
-For computation speed purpose, the plugin will detect the row with non available data (<code>NA</code>) and will attempt to fill them. The procedure follow the data flow shown in <a href="value-of-agricultural-production.html#fun_data_flow">figure</a> below.
-The function will detect the missing values and try to perform the three year average of the production value of the tree years before. If this data is not available it will scan for the first available production value in the past and will replicate its value. The plugin will return <code>NA</code> if no production values is found in the past for the specific country and commodity.</p>
+For computation speed purpose, the plugin will detect only rows with non available data (<code>NA</code>) and will attempt to fill them. The procedure follows data flow shown in <a href="value-of-agricultural-production.html#fun_data_flow">figure</a> below.
+The function will detect the missing values and try to perform a three year average of the production value of the three years before. If this data is not available it will scan for the first available production value in the past and will replicate its value. The plugin will return <code>NA</code> if no production values is found in the past for the specific country and commodity.</p>
 <div class="figure">
 <img src="images/gap_filler_df.png" id="fun_data_flow" style="width:150.0%" alt="" />
 <p class="caption">production_gap_filler Data Flow</p>
