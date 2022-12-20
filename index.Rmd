@@ -32,13 +32,13 @@ For the validation of the existing procedure data are imported from different FA
   
   - International prices are obtained from FAOSTAT ["_Producer Prices - Supplementary_"](http://fenix.fao.org/faostat/internal/en/#data/PX) dataset and uploaded on SWS `"Supplementary International Dollar"` datatable;
   
-  - Country list is obtained from _Definitions and standards_ section of FAOSTAT ["Value of Production"](https://www.fao.org/faostat/en/#data/QV) dataset and uploaded into the `"Value of production - country/region"` SWS datatable;
+  - Country list is obtained from _Definitions and standards_ section of FAOSTAT ["Value of Production"](https://www.fao.org/faostat/en/#data/QV) dataset and uploaded into SWS `"Value of production - country/region"` datatable;
 
-  -  Country group list is obtained from _Definitions and standards_ section of FAOSTAT ["Value of Production"](https://www.fao.org/faostat/en/#data/QV) dataset and uploaded into the `"Value of Production - Country Group"` SWS datatable;
+  -  Country group list is obtained from _Definitions and standards_ section of FAOSTAT ["Value of Production"](https://www.fao.org/faostat/en/#data/QV) dataset and uploaded into SWS `"Value of Production - Country Group"` datatable;
 
-  - Item list is obtained from _Definitions and standards_ section of FAOSTAT ["Value of Production"](https://www.fao.org/faostat/en/#data/QV) dataset and uploaded into the `"Value of Production - Item"` SWS datatable;
+  - Item list is obtained from _Definitions and standards_ section of FAOSTAT ["Value of Production"](https://www.fao.org/faostat/en/#data/QV) dataset and uploaded into SWS `"Value of Production - Item"` datatable;
   
-  - Item group list is obtained from _Definitions and standards_ section of FAOSTAT ["Value of Production"](https://www.fao.org/faostat/en/#data/QV) dataset and uploaded into the `"Value of Production - Item group"` SWS datatable;
+  - Item group list is obtained from _Definitions and standards_ section of FAOSTAT ["Value of Production"](https://www.fao.org/faostat/en/#data/QV) dataset and uploaded into SWS `"Value of Production - Item group"` datatable;
   
 A detailed description of each supporting datatable is reported in [SWS resources](#datatables) section of this documentation. 
 
