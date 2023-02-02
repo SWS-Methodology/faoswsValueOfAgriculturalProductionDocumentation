@@ -20,18 +20,14 @@ github-repo: https://github.com/IvanSortino97/ValueOfProduction
 # About
 
 The aim of this module is to calculate the Value of Agriculture production within the Statistical Working System (SWS). The implementation of the procedure needs to be validated by matching the results disseminated by FAO until now. 
-In order to perform the validation, disseminated data needs to be available within the SWS. Data are imported from different FAOSTAT domain into SWS _Dissiminated Dataset_. 
-After the validation, the procedure will be applied on the corresponding production value and prices presents within the system and stored in a new "Value of Production" dataset.
+In order to perform the validation, disseminated data needs to be available within SWS in the corresponding dataset of _Dissiminated Dataset_ Domain.
+After the validation, the procedure can be applied on the corresponding production value and prices presents within the system and stored in a new "Value of Production" dataset.
 
 
 ## Build up data for validation of procedure
 
-For the validation of the existing procedure data are imported from different FAOSTAT domain. For instance: 
+For the validation of the existing procedure, data are imported into different supporting datatable in SWS. For instance Item list, Countries list and group compositions are fetched as follow:
 
-  - Production data are obtained from FAOSTAT ["_Crops and livestock products_"](https://www.fao.org/faostat/en/#data/QCL) domain and uploaded on SWS `"FAOSTAT production data"` datatable;
-  
-  - International prices are obtained from FAOSTAT ["_Producer Prices - Supplementary_"](http://fenix.fao.org/faostat/internal/en/#data/PX) dataset and uploaded on SWS `"Supplementary International Dollar"` datatable;
-  
   - Country list is obtained from _Definitions and standards_ section of FAOSTAT ["Value of Production"](https://www.fao.org/faostat/en/#data/QV) dataset and uploaded into SWS `"Value of production - country/region"` datatable;
 
   -  Country group list is obtained from _Definitions and standards_ section of FAOSTAT ["Value of Production"](https://www.fao.org/faostat/en/#data/QV) dataset and uploaded into SWS `"Value of Production - Country Group"` datatable;
@@ -39,19 +35,48 @@ For the validation of the existing procedure data are imported from different FA
   - Item list is obtained from _Definitions and standards_ section of FAOSTAT ["Value of Production"](https://www.fao.org/faostat/en/#data/QV) dataset and uploaded into SWS `"Value of Production - Item"` datatable;
   
   - Item group list is obtained from _Definitions and standards_ section of FAOSTAT ["Value of Production"](https://www.fao.org/faostat/en/#data/QV) dataset and uploaded into SWS `"Value of Production - Item group"` datatable;
+
+  - International prices are obtained from FAOSTAT FENIX ["_Producer Prices - Supplementary_"](http://fenix.fao.org/faostat/internal/en/#data/PX) dataset and uploaded on SWS `"Supplementary International Dollar"` datatable;
   
 A detailed description of each supporting datatable is reported in [SWS resources](#datatables) section of this documentation. 
 
 Since historical disseminated data may differ from those present on the Statistical Working System, it is necessary to make it available on SWS. To do this the CSI-SWS technical team need to retrieve the data from the the dissemination platform (FAOSTAT) and update it on `Disseminated Domain`. Once the procedure is done, Production and Prices data will be in line with disseminated one and the calculation should match the historical data.
 
+
 ## SWS implementation procedure
 
-Once the procedure have been validated, the module will pull its data directly within the working system database. For instance :
+The plugin will work within a session, meaning that the user needs to select the elements and the years for which they intend to calculate the Value of Agriculture Production, then run the plugin within the new created session. 
+It is worth noting that for the sake of consistency with FAOSTAT item/country list and for calculation of the aggregates, the plugin will always return values for all the countries and items specified into the supporting data table `"Value of production - country/region"` and `"Value of Production - Item"`
 
-  - Production data are stored in  `agriculture` domain, dataset `aproduction`;
-  
-  - Prices data are stored in `producer prices` domain, dataset `international dollar prices`.
-  
-The module will then refer to data present on those dataset to calculate Value of Production.
+The module will pull its data directly within the working system, allowing the user to choose the source of data both for Production data and for Annual Producer Prices. For instance, if Disseminated Datasets source is not selected:
 
+  - Production data in tonnes (element 5510/55100) are pulled from  `agriculture` domain, dataset `aproduction`;
+  
+  - Annual Producer Prices data for Standard Local Currency (element 5531) and US Dollar (element 5532) are pulled from `producer prices` domain, dataset `annual_producer_prices_validation` 
+  
+  - Annual Producer Prices data for International Dollar (element 5533) are pulled from `producer prices` domain,  dataset `international dollar prices`.
+  
+If Disseminated Datasets source is selected, the plugin will pull its data from the corresponding datasets of the "Disseminated Datasets" domain, however since International dollar prices are not disseminated, they will be always fetched in "Producer Prices" domain.
+
+## Output of the plugin
+
+The module will return the time series for all the elements selected in the session. The output elements are listed in the table below: 
+
+<br>
+
+```{r echo=FALSE}
+element = c('56','55','57','58','152','154')
+
+desc = c('Gross Production Value (current thousand SLC)',
+'Gross Production Value (constant 3-year base thousand SLC)',
+'Gross Production Value (current thousand US\\$)',
+'Gross Production Value (constant 3-year base thousand US\\$)',
+'Gross Production Value (constant 3-year base thousand I\\$) ',
+'Net Production Value (constant thousand I\\$) '
+)
+
+
+knitr::kable(data.frame(Element = element, Element = desc ) , caption = "Value of Agricultural Production Plugin calculated elements.", col.names = c("Element Code", "Element descriptor") )
+
+```
 
