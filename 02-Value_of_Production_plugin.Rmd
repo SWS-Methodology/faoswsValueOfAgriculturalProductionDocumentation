@@ -1,7 +1,12 @@
-# Value of Production Plugin 
+# Value of Production Plugin
+
+The Value of Agricultural Production plugin have the following workflow : 
+
 
 The Gross Production Value plugin have the following workflow :
 <br>
+
+From **Input data \--> Gross production calculation \--> Gross production aggregates calculations \--> Final Output**
 
 From **Input data --> Reference tables --> Gross Production calculations --> Final Output**
 <br>
