@@ -29,3 +29,8 @@ value-of-production---country-group
 cover-image-path-to-the-social-sharing-image-like-imagescover.jpg
 tab:unnamed-chunk-6
 output-of-the-plugin
+value-of-production-plugin
+supporting-r-function-1
+production_gap_filler.r-1
+aggregates-1
+run-the-module-1
