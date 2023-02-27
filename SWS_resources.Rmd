@@ -4,7 +4,18 @@ This section enclose a detailed description of all the auxiliary resources neede
 
 ## Code Lists
 
-[To Do]
+Code lists describe the dimentions that compose the different datasets, they are designed by the users to store analytical results from SWS modules. Each dataset have a set of codes and their associated description, thus Codelists are used within different sets for the sake of standardization, visualization and metadata associated to each dimentions. \
+The code lists that describe `Value of Agricultural Production ` dataset are the following : 
+
+  -  `GeographicAreaM49` :  Represent the spatial scale, it is composed by countries territories, , regional aggregates, regional special groups aggregates, global aggregates. 
+  
+  -  `measuredElement ` : Represent the different element calculated by the plugin through the methodology metioned above. For instance Gross production in different currencies and Gross Production index numbers. 
+  
+  -   `measuredItemCPC ` : Those items wants to take measure of production. For example, commodities and commodity groups produced by a country;
+  
+  -  `timePointYears` : The time unit (year) data is displayed for.
+
+<br>
 
 ## Data Tables {#datatables}
 
@@ -14,57 +25,10 @@ Below a detailed description of all the datatable used in the Value of Productio
 
 <br>
 
-### FAOSTAT production data
-
-  * **Datatable :** `FAOSTAT production data`
-  * **Domain :** `Test - Ivan Sortino` (Provvisorio)
-  * **Usage :** Used to import production data from FAOSTAT to SWS for validation procedure. This datatable will be dismissed after the technical team import the production data into the `Disseminated Dataset` .
-  
-  <br>
-
-```{r echo=FALSE}
-name = c('Domain Code',
-'Domain',
-'Area Code (M49)',
-'Area',
-'Element Code',
-'Element',
-'Item Code (CPC)',
-'Item',	
-'Year Code',
-'Year',
-'Unit',
-'Value',
-'Flag',
-'Flag Description')
-
-desc = c(
-'Domain Code of the dissemination platform',
-'Domain name of the dissemination platform',
-'Area Code M49',
-'Area name',
-'Element code for production',
-'Element name',
-'Item CPC code',
-'Item name',
-'Year code selected',
-'Year selected',
-'Tonnes',
-'Value of production',
-'Flag in the dissemination platform',
-'Flag description'
-)
-
-
-knitr::kable(data.frame(Field= name, Description= desc ) , caption = "FAOSTAT Production data field summary.", col.names = c("Field", "Description") )
-
-```
-<br>
-
 ### Supplementary International Dollar
 
   * **Datatable :** `Supplementary International Dollar`
-  * **Domain :** `Test - Ivan Sortino` (Provvisorio)
+  * **Domain :** `Agriculture Production` 
   * **Usage :** Used to import International Dollar from FAOSTAT to SWS for validation procedure.
   
   <br>
@@ -103,10 +67,10 @@ knitr::kable(data.frame(Field= name, Description= desc ) , caption = "Internatio
 
 <br>
 
-### Value of Production - Country/region
+### Value of Production - Country {#countrytab}
 
-  * **Datatable :** `Value of Production - country/region`
-  * **Domain :** `Test - Ivan Sortino` (Provvisorio)
+  * **Datatable :** `Value of Production - country`
+  * **Domain :** `Agriculture Production` 
   * **Usage :** Used to define the countries for which the Value of Production is calculated.
   
   <br>
@@ -117,7 +81,9 @@ name = c(
 "Country",
 "M49_code",
 "ISO2_code",
-"ISO3_code"
+"ISO3_code",
+"Start Date",
+"End Date"
 
 )
 
@@ -126,7 +92,9 @@ desc = c(
 'Name of the country',
 'M49 country code',
 'ISO2 country code',
-'ISO3 country code'
+'ISO3 country code',
+'Starting validity of the country',
+'Ending validity of the country'
 
 )
 
@@ -136,10 +104,10 @@ knitr::kable(data.frame(Field= name, Description= desc ) , caption = "Country li
 ```
 <br>
 
-### Value of Production - Country Group
+### Value of Production - Country Group {#countrygrouptab}
 
   * **Datatable :** `Value of Production - Country Group`
-  * **Domain :** `Test - Ivan Sortino` (Provvisorio)
+  * **Domain :** `Agriculture Production` 
   * **Usage :** Used to define the countries groups for aggregations.
   
   <br>
@@ -175,10 +143,10 @@ knitr::kable(data.frame(Field= name, Description= desc ) , caption = "Country gr
 <br>
 
 
-### Value of Production - Item
+### Value of Production - Item {#itemtab}
 
   * **Datatable :** `Value of Production - Item`
-  * **Domain :** `Test - Ivan Sortino` (Provvisorio)
+  * **Domain :** `Agriculture Production` 
   * **Usage :** Used to define the items list for which the Value of Production is calculated .
   
   <br>
@@ -205,7 +173,7 @@ knitr::kable(data.frame(Field= name, Description= desc ) , caption = "Item list 
 
 <br>
 
-### Value of Production - Item group
+### Value of Production - Item group {#itemgrouptab}
 
   * **Datatable :** `Value of Production - Item group`
   * **Domain :** `Test - Ivan Sortino` (Provvisorio)

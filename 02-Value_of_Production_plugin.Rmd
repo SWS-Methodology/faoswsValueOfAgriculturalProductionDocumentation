@@ -1,35 +1,27 @@
 # Value of Production Plugin
 
-The Value of Agricultural Production plugin have the following workflow : 
+## Data Flow
 
+The general workflow of the Value of Agricultural Plugin can be summarized as follow :
 
-The Gross Production Value plugin have the following workflow :
 <br>
 
-From **Input data \--> Gross production calculation \--> Gross production aggregates calculations \--> Final Output**
+From **Input data \--> Gross production calculation \--> Gross Production index Number calculation \--> Aggregates calculations \--> Final Output**
 
-From **Input data --> Reference tables --> Gross Production calculations --> Final Output**
 <br>
 
-![Gross Production Value Plugin Data Flow  ](./images/data_flow.png){ width=150% }
+![Gross Production Value Plugin dataflow ](./images/data_flow.png){ width=150% }
+<br>
+The function require as input Production in tonnes and Annual Producer prices. The calculation will be performed for all the items defined in the supporting data table `"Value of Production - Item"` and for all the countries in `"Value of production - Country"`, then aggregated at item-group and region level. The aggregation at region level will follows groups composition specified in FAOSTAT, the plugin will also adjust the composition of the groups by years to match the correct composition according to the validity period of each countries. \
 
+### Input data Flow
 
-The inputs for the Gross Production plugin are the Agriculture Production value and International Dollar Prices. The calculation will be performed for all the items defined in the supporting table and then aggregated at item group level and countries group level.
-If the production data in not available for a certain commodity, through the function `production_gap_filler.R`,  the plugin will perform a three year mean of the production value of the three past years. If also this information are not provided, it will take the last available production value in the past.
+The source of inputs data for the plugin is structured as follow:
 
+![Gross Production Value Plugin Input data flow](./images/input_data_flow.png){ width=150% }
 
+The plugin allows the user to choose the source for both Production and Prices through two different parameters, for instance, if some data is currently unavailable in `Disseminated Datasets` it is possible to select another source for the calculation. It is worth noting that pulling data from production datasets may lead to different results with respect to the disseminated one since some of the source data may differ or miss respect to FAOSTAT data.
 
-### Supporting R function
-
-Description of the supporting R function written for the plugin.
-
-#### production_gap_filler.R
-
-To provide the Value of Production plugin a more consistent dataset, some of the production data are estimated through this plugin. 
-For computation speed purpose, the plugin will detect only rows with non available data (`NA`) and will attempt to fill them. The procedure follows data flow shown in [figure](#fun_data_flow) below. 
-The function will detect the missing values and try to perform a three year average of the production value of the three years before. If this data is not available it will scan for the first available production value in the past and will replicate its value. The plugin will return `NA` if no production values is found in the past for the specific country and commodity. 
-
-![production_gap_filler Data Flow](./images/gap_filler_df.png){#fun_data_flow width=150% }
 
 
 
@@ -37,29 +29,32 @@ The function will detect the missing values and try to perform a three year aver
 
 The plugin calculate the Gross Production value at different aggregation value :
 
-  - item groups and area 
+  - Item groups and Regions 
   
-  - area groups and item
+  - Regions and single-Items
   
-  - item groups and area groups.
+  - Item groups and Regions.
   
 The items and countries group lists are obtained from the "Definitions and Standards" section of the dissemination platform website ( [FAOSTAT](https://www.fao.org/faostat/en/#data/QV) ).
-They are described and reported on the [SWS Resources section](#resources) section of this documentation.
+They are described and reported on the [SWS Resources section](#resources) section of this documentation.\
 
-It is important that the technical unit validate those table to ensure that they are up-to-date and the right aggregations are performed. 
+It is important that the technical unit validate those table to ensure that they are up-to-date and the right aggregations are performed.\
+
 
 ## Run the module
 
   1. Log-in into [SWS](https://sws.fao.org/);
   
-  2. Select **New Query** and choose `Test - Ivan Sortino` (Provvisorio) Domain and `Gross Production Value` dataset;
+  2. Select **New Query** and choose `Agriculture Production` Domain, `Value of Agricultural Production` dataset;
   
   3. Select the geographicAreaM49, measuredElement, measuredItemCPC and timePointYears in which you are interested and run the query;
   
+![Running Session](./images/SWS_first.png){scale=110% }
+
   4. Once you created your session select run plugin as shown in [picture below](#screenuno);
   
-![Running plugin](./images/SWS_first.png){#screenuno scale=110% }
+![Running Plugin](./images/SWS_first2.png){#screenuno scale=110% }
 
-  5. Select the parameters: base year and level of aggregation. 
+  5. Select the parameters: base year, level of aggregation and Data sources. The user can also choose the execution method for the plugin, if many elements and long time-span are selected, it is suggested to choose the "send me an email" option since it can take a few hours to run entirely. 
   
-![Plugin parameters](./images/SWS_sec.png){#screenuno scale=110% }  
+![Plugin parameters](./images/SWS_sec.png){ scale=110% }  
