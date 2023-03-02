@@ -25,6 +25,27 @@ Below a detailed description of all the datatable used in the Value of Productio
 
 <br>
 
+### Base Year Parameter
+
+  * **Datatable :** `Value of Production - Base Year Parameter`
+  * **Domain :** `Agriculture Production` 
+  * **Usage :** Used to define the base year. The plugin will calculate the three-year base period around the specified value. 
+  
+  <br>
+
+```{r echo=FALSE}
+name = c("Base Year")
+
+desc = c("Base Year of the Value of Agricultural Plugin")
+
+
+knitr::kable(data.frame(Field= name, Description= desc ) , caption = "Input parameter for the base year range.", col.names = c("Field", "Description") )
+
+```
+
+<br>
+
+
 ### Supplementary International Dollar
 
   * **Datatable :** `Supplementary International Dollar`
@@ -176,7 +197,7 @@ knitr::kable(data.frame(Field= name, Description= desc ) , caption = "Item list 
 ### Value of Production - Item group {#itemgrouptab}
 
   * **Datatable :** `Value of Production - Item group`
-  * **Domain :** `Test - Ivan Sortino` (Provvisorio)
+  * **Domain :** `Agriculture Production`
   * **Usage :** Used to define the items group list for items aggregations .
   
   <br>
@@ -198,6 +219,47 @@ desc = c(
 'Name of the item',
 'Factor for item aggregation',
 'Corresponding CPC item code'
+)
+
+
+knitr::kable(data.frame(Field= name, Description= desc ) , caption = "Item list data field summary.", col.names = c("Field", "Description") )
+
+```
+
+
+### Value of Production - LOG
+
+  * **Datatable :** `Value of Production - LOG`
+  * **Domain :** `Agriculture Production` 
+  * **Usage :** Provide a LOG history of plugin runs.
+  
+  <br>
+
+```{r echo=FALSE}
+name = c("User",
+         "Execution Date",
+         "Base Year Parameter",
+         "Item aggregation parameter",
+         "Countries aggregation parameter",
+         "Source Production data",
+         "Source Prices data",
+         "Lines writed",
+         "Lines omitted",
+         "Lines discarded"
+         
+)
+
+desc = c("User email of the user that run the plugin",
+         "Date of the execution",
+         "Base year selected",
+         "Item aggregation level",
+         "Countries aggregation level",
+         "Source of production data",
+         "Source of Producer prices data",
+         "Data points writed by the plugin",
+         "Data points not updated by the plugin",
+         "Datapoints not writed by the plugin"
+         
 )
 
 

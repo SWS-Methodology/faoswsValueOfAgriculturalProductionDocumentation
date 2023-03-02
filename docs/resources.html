@@ -23,7 +23,7 @@
 <meta name="author" content="Ivan Sortino" />
 
 
-<meta name="date" content="2023-02-27" />
+<meta name="date" content="2023-03-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -99,11 +99,13 @@
 <li class="chapter" data-level="3.4" data-path="resources.html"><a href="resources.html#code-lists"><i class="fa fa-check"></i><b>3.4</b> Code Lists</a></li>
 <li class="chapter" data-level="3.5" data-path="resources.html"><a href="resources.html#datatables"><i class="fa fa-check"></i><b>3.5</b> Data Tables</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="resources.html"><a href="resources.html#supplementary-international-dollar"><i class="fa fa-check"></i><b>3.5.1</b> Supplementary International Dollar</a></li>
-<li class="chapter" data-level="3.5.2" data-path="resources.html"><a href="resources.html#countrytab"><i class="fa fa-check"></i><b>3.5.2</b> Value of Production - Country</a></li>
-<li class="chapter" data-level="3.5.3" data-path="resources.html"><a href="resources.html#countrygrouptab"><i class="fa fa-check"></i><b>3.5.3</b> Value of Production - Country Group</a></li>
-<li class="chapter" data-level="3.5.4" data-path="resources.html"><a href="resources.html#itemtab"><i class="fa fa-check"></i><b>3.5.4</b> Value of Production - Item</a></li>
-<li class="chapter" data-level="3.5.5" data-path="resources.html"><a href="resources.html#itemgrouptab"><i class="fa fa-check"></i><b>3.5.5</b> Value of Production - Item group</a></li>
+<li class="chapter" data-level="3.5.1" data-path="resources.html"><a href="resources.html#base-year-parameter"><i class="fa fa-check"></i><b>3.5.1</b> Base Year Parameter</a></li>
+<li class="chapter" data-level="3.5.2" data-path="resources.html"><a href="resources.html#supplementary-international-dollar"><i class="fa fa-check"></i><b>3.5.2</b> Supplementary International Dollar</a></li>
+<li class="chapter" data-level="3.5.3" data-path="resources.html"><a href="resources.html#countrytab"><i class="fa fa-check"></i><b>3.5.3</b> Value of Production - Country</a></li>
+<li class="chapter" data-level="3.5.4" data-path="resources.html"><a href="resources.html#countrygrouptab"><i class="fa fa-check"></i><b>3.5.4</b> Value of Production - Country Group</a></li>
+<li class="chapter" data-level="3.5.5" data-path="resources.html"><a href="resources.html#itemtab"><i class="fa fa-check"></i><b>3.5.5</b> Value of Production - Item</a></li>
+<li class="chapter" data-level="3.5.6" data-path="resources.html"><a href="resources.html#itemgrouptab"><i class="fa fa-check"></i><b>3.5.6</b> Value of Production - Item group</a></li>
+<li class="chapter" data-level="3.5.7" data-path="resources.html"><a href="resources.html#value-of-production---log"><i class="fa fa-check"></i><b>3.5.7</b> Value of Production - LOG</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -146,8 +148,33 @@ The code lists that describe <code>Value of Agricultural Production</code> datas
 Variable names (column names) of datatables are more flexible compared to those of datasets, they can accommodate all kind of names and are not strictly constrained by code lists or by the domain in which they are stored.
 Below a detailed description of all the datatable used in the Value of Production module.</p>
 <p><br></p>
-<div id="supplementary-international-dollar" class="section level3 hasAnchor" number="3.5.1">
-<h3><span class="header-section-number">3.5.1</span> Supplementary International Dollar<a href="resources.html#supplementary-international-dollar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="base-year-parameter" class="section level3 hasAnchor" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> Base Year Parameter<a href="resources.html#base-year-parameter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Datatable :</strong> <code>Value of Production - Base Year Parameter</code></li>
+<li><strong>Domain :</strong> <code>Agriculture Production</code></li>
+<li><strong>Usage :</strong> Used to define the base year. The plugin will calculate the three-year base period around the specified value.</li>
+</ul>
+<p><br></p>
+<table>
+<caption><span id="tab:unnamed-chunk-1">Table 3.1: </span>Input parameter for the base year range.</caption>
+<thead>
+<tr class="header">
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Base Year</td>
+<td align="left">Base Year of the Value of Agricultural Plugin</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</div>
+<div id="supplementary-international-dollar" class="section level3 hasAnchor" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> Supplementary International Dollar<a href="resources.html#supplementary-international-dollar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><strong>Datatable :</strong> <code>Supplementary International Dollar</code></li>
 <li><strong>Domain :</strong> <code>Agriculture Production</code></li>
@@ -155,7 +182,7 @@ Below a detailed description of all the datatable used in the Value of Productio
 </ul>
 <p><br></p>
 <table>
-<caption><span id="tab:unnamed-chunk-1">Table 3.1: </span>International Dollar data field summary.</caption>
+<caption><span id="tab:unnamed-chunk-2">Table 3.2: </span>International Dollar data field summary.</caption>
 <thead>
 <tr class="header">
 <th align="left">Field</th>
@@ -207,8 +234,8 @@ Below a detailed description of all the datatable used in the Value of Productio
 </table>
 <p><br></p>
 </div>
-<div id="countrytab" class="section level3 hasAnchor" number="3.5.2">
-<h3><span class="header-section-number">3.5.2</span> Value of Production - Country<a href="resources.html#countrytab" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="countrytab" class="section level3 hasAnchor" number="3.5.3">
+<h3><span class="header-section-number">3.5.3</span> Value of Production - Country<a href="resources.html#countrytab" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><strong>Datatable :</strong> <code>Value of Production - country</code></li>
 <li><strong>Domain :</strong> <code>Agriculture Production</code></li>
@@ -216,7 +243,7 @@ Below a detailed description of all the datatable used in the Value of Productio
 </ul>
 <p><br></p>
 <table>
-<caption><span id="tab:unnamed-chunk-2">Table 3.2: </span>Country list field summary.</caption>
+<caption><span id="tab:unnamed-chunk-3">Table 3.3: </span>Country list field summary.</caption>
 <thead>
 <tr class="header">
 <th align="left">Field</th>
@@ -256,8 +283,8 @@ Below a detailed description of all the datatable used in the Value of Productio
 </table>
 <p><br></p>
 </div>
-<div id="countrygrouptab" class="section level3 hasAnchor" number="3.5.3">
-<h3><span class="header-section-number">3.5.3</span> Value of Production - Country Group<a href="resources.html#countrygrouptab" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="countrygrouptab" class="section level3 hasAnchor" number="3.5.4">
+<h3><span class="header-section-number">3.5.4</span> Value of Production - Country Group<a href="resources.html#countrygrouptab" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><strong>Datatable :</strong> <code>Value of Production - Country Group</code></li>
 <li><strong>Domain :</strong> <code>Agriculture Production</code></li>
@@ -265,7 +292,7 @@ Below a detailed description of all the datatable used in the Value of Productio
 </ul>
 <p><br></p>
 <table>
-<caption><span id="tab:unnamed-chunk-3">Table 3.3: </span>Country group list field summary.</caption>
+<caption><span id="tab:unnamed-chunk-4">Table 3.4: </span>Country group list field summary.</caption>
 <thead>
 <tr class="header">
 <th align="left">Field</th>
@@ -305,8 +332,8 @@ Below a detailed description of all the datatable used in the Value of Productio
 </table>
 <p><br></p>
 </div>
-<div id="itemtab" class="section level3 hasAnchor" number="3.5.4">
-<h3><span class="header-section-number">3.5.4</span> Value of Production - Item<a href="resources.html#itemtab" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="itemtab" class="section level3 hasAnchor" number="3.5.5">
+<h3><span class="header-section-number">3.5.5</span> Value of Production - Item<a href="resources.html#itemtab" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><strong>Datatable :</strong> <code>Value of Production - Item</code></li>
 <li><strong>Domain :</strong> <code>Agriculture Production</code></li>
@@ -314,7 +341,7 @@ Below a detailed description of all the datatable used in the Value of Productio
 </ul>
 <p><br></p>
 <table>
-<caption><span id="tab:unnamed-chunk-4">Table 3.4: </span>Item list data field summary.</caption>
+<caption><span id="tab:unnamed-chunk-5">Table 3.5: </span>Item list data field summary.</caption>
 <thead>
 <tr class="header">
 <th align="left">Field</th>
@@ -342,16 +369,16 @@ Below a detailed description of all the datatable used in the Value of Productio
 </table>
 <p><br></p>
 </div>
-<div id="itemgrouptab" class="section level3 hasAnchor" number="3.5.5">
-<h3><span class="header-section-number">3.5.5</span> Value of Production - Item group<a href="resources.html#itemgrouptab" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="itemgrouptab" class="section level3 hasAnchor" number="3.5.6">
+<h3><span class="header-section-number">3.5.6</span> Value of Production - Item group<a href="resources.html#itemgrouptab" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><strong>Datatable :</strong> <code>Value of Production - Item group</code></li>
-<li><strong>Domain :</strong> <code>Test - Ivan Sortino</code> (Provvisorio)</li>
+<li><strong>Domain :</strong> <code>Agriculture Production</code></li>
 <li><strong>Usage :</strong> Used to define the items group list for items aggregations .</li>
 </ul>
 <p><br></p>
 <table>
-<caption><span id="tab:unnamed-chunk-5">Table 3.5: </span>Item list data field summary.</caption>
+<caption><span id="tab:unnamed-chunk-6">Table 3.6: </span>Item list data field summary.</caption>
 <thead>
 <tr class="header">
 <th align="left">Field</th>
@@ -382,6 +409,70 @@ Below a detailed description of all the datatable used in the Value of Productio
 <tr class="even">
 <td align="left">CPC code</td>
 <td align="left">Corresponding CPC item code</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="value-of-production---log" class="section level3 hasAnchor" number="3.5.7">
+<h3><span class="header-section-number">3.5.7</span> Value of Production - LOG<a href="resources.html#value-of-production---log" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Datatable :</strong> <code>Value of Production - LOG</code></li>
+<li><strong>Domain :</strong> <code>Agriculture Production</code></li>
+<li><strong>Usage :</strong> Provide a LOG history of plugin runs.</li>
+</ul>
+<p><br></p>
+<table>
+<caption><span id="tab:unnamed-chunk-7">Table 3.7: </span>Item list data field summary.</caption>
+<colgroup>
+<col width="42%" />
+<col width="57%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">User</td>
+<td align="left">User email of the user that run the plugin</td>
+</tr>
+<tr class="even">
+<td align="left">Execution Date</td>
+<td align="left">Date of the execution</td>
+</tr>
+<tr class="odd">
+<td align="left">Base Year Parameter</td>
+<td align="left">Base year selected</td>
+</tr>
+<tr class="even">
+<td align="left">Item aggregation parameter</td>
+<td align="left">Item aggregation level</td>
+</tr>
+<tr class="odd">
+<td align="left">Countries aggregation parameter</td>
+<td align="left">Countries aggregation level</td>
+</tr>
+<tr class="even">
+<td align="left">Source Production data</td>
+<td align="left">Source of production data</td>
+</tr>
+<tr class="odd">
+<td align="left">Source Prices data</td>
+<td align="left">Source of Producer prices data</td>
+</tr>
+<tr class="even">
+<td align="left">Lines writed</td>
+<td align="left">Data points writed by the plugin</td>
+</tr>
+<tr class="odd">
+<td align="left">Lines omitted</td>
+<td align="left">Data points not updated by the plugin</td>
+</tr>
+<tr class="even">
+<td align="left">Lines discarded</td>
+<td align="left">Datapoints not writed by the plugin</td>
 </tr>
 </tbody>
 </table>

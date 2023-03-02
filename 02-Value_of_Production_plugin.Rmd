@@ -10,20 +10,23 @@ From **Input data \--> Gross production calculation \--> Gross Production index 
 
 <br>
 
-![Gross Production Value Plugin dataflow ](./images/data_flow.png){ width=150% }
+![Gross Production Value Plugin dataflow ](./images/data_flow.jpg){}
 <br>
+
 The function require as input Production in tonnes and Annual Producer prices. The calculation will be performed for all the items defined in the supporting data table `"Value of Production - Item"` and for all the countries in `"Value of production - Country"`, then aggregated at item-group and region level. The aggregation at region level will follows groups composition specified in FAOSTAT, the plugin will also adjust the composition of the groups by years to match the correct composition according to the validity period of each countries. \
 
 ### Input data Flow
 
 The source of inputs data for the plugin is structured as follow:
 
-![Gross Production Value Plugin Input data flow](./images/input_data_flow.png){ width=150% }
+![Gross Production Value Plugin Input data flow](./images/input_data_flow.jpg){ width=150% }
 
 The plugin allows the user to choose the source for both Production and Prices through two different parameters, for instance, if some data is currently unavailable in `Disseminated Datasets` it is possible to select another source for the calculation. It is worth noting that pulling data from production datasets may lead to different results with respect to the disseminated one since some of the source data may differ or miss respect to FAOSTAT data.
 
+#### Additional informations 
 
-
+  -  The plugin will automatically pull data for indigenous meat with element code [55100] instead of [5510] 
+  - The production quantity for CPC Item *Other meat n.e. (excluding mammals)*  [21170.92] will be pulled from SWS with item code [21119.90] instead. 
 
 ## Aggregates
 

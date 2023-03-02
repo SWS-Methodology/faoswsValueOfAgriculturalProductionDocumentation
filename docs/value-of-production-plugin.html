@@ -23,7 +23,7 @@
 <meta name="author" content="Ivan Sortino" />
 
 
-<meta name="date" content="2023-02-27" />
+<meta name="date" content="2023-03-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -99,11 +99,13 @@
 <li class="chapter" data-level="3.4" data-path="resources.html"><a href="resources.html#code-lists"><i class="fa fa-check"></i><b>3.4</b> Code Lists</a></li>
 <li class="chapter" data-level="3.5" data-path="resources.html"><a href="resources.html#datatables"><i class="fa fa-check"></i><b>3.5</b> Data Tables</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="resources.html"><a href="resources.html#supplementary-international-dollar"><i class="fa fa-check"></i><b>3.5.1</b> Supplementary International Dollar</a></li>
-<li class="chapter" data-level="3.5.2" data-path="resources.html"><a href="resources.html#countrytab"><i class="fa fa-check"></i><b>3.5.2</b> Value of Production - Country</a></li>
-<li class="chapter" data-level="3.5.3" data-path="resources.html"><a href="resources.html#countrygrouptab"><i class="fa fa-check"></i><b>3.5.3</b> Value of Production - Country Group</a></li>
-<li class="chapter" data-level="3.5.4" data-path="resources.html"><a href="resources.html#itemtab"><i class="fa fa-check"></i><b>3.5.4</b> Value of Production - Item</a></li>
-<li class="chapter" data-level="3.5.5" data-path="resources.html"><a href="resources.html#itemgrouptab"><i class="fa fa-check"></i><b>3.5.5</b> Value of Production - Item group</a></li>
+<li class="chapter" data-level="3.5.1" data-path="resources.html"><a href="resources.html#base-year-parameter"><i class="fa fa-check"></i><b>3.5.1</b> Base Year Parameter</a></li>
+<li class="chapter" data-level="3.5.2" data-path="resources.html"><a href="resources.html#supplementary-international-dollar"><i class="fa fa-check"></i><b>3.5.2</b> Supplementary International Dollar</a></li>
+<li class="chapter" data-level="3.5.3" data-path="resources.html"><a href="resources.html#countrytab"><i class="fa fa-check"></i><b>3.5.3</b> Value of Production - Country</a></li>
+<li class="chapter" data-level="3.5.4" data-path="resources.html"><a href="resources.html#countrygrouptab"><i class="fa fa-check"></i><b>3.5.4</b> Value of Production - Country Group</a></li>
+<li class="chapter" data-level="3.5.5" data-path="resources.html"><a href="resources.html#itemtab"><i class="fa fa-check"></i><b>3.5.5</b> Value of Production - Item</a></li>
+<li class="chapter" data-level="3.5.6" data-path="resources.html"><a href="resources.html#itemgrouptab"><i class="fa fa-check"></i><b>3.5.6</b> Value of Production - Item group</a></li>
+<li class="chapter" data-level="3.5.7" data-path="resources.html"><a href="resources.html#value-of-production---log"><i class="fa fa-check"></i><b>3.5.7</b> Value of Production - LOG</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -133,18 +135,25 @@
 <p><br></p>
 <p>From <strong>Input data --&gt; Gross production calculation --&gt; Gross Production index Number calculation --&gt; Aggregates calculations --&gt; Final Output</strong></p>
 <p><br></p>
-<p><img src="images/data_flow.png" style="width:150.0%" alt="Gross Production Value Plugin dataflow" />
-<br>
-The function require as input Production in tonnes and Annual Producer prices. The calculation will be performed for all the items defined in the supporting data table <code>"Value of Production - Item"</code> and for all the countries in <code>"Value of production - Country"</code>, then aggregated at item-group and region level. The aggregation at region level will follows groups composition specified in FAOSTAT, the plugin will also adjust the composition of the groups by years to match the correct composition according to the validity period of each countries.<br />
+<p><img src="images/data_flow.jpg" alt="Gross Production Value Plugin dataflow" />
+<br></p>
+<p>The function require as input Production in tonnes and Annual Producer prices. The calculation will be performed for all the items defined in the supporting data table <code>"Value of Production - Item"</code> and for all the countries in <code>"Value of production - Country"</code>, then aggregated at item-group and region level. The aggregation at region level will follows groups composition specified in FAOSTAT, the plugin will also adjust the composition of the groups by years to match the correct composition according to the validity period of each countries.<br />
 </p>
 <div id="input-data-flow" class="section level3 hasAnchor" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Input data Flow<a href="value-of-production-plugin.html#input-data-flow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The source of inputs data for the plugin is structured as follow:</p>
 <div class="figure">
-<img src="images/input_data_flow.png" style="width:150.0%" alt="" />
+<img src="images/input_data_flow.jpg" style="width:150.0%" alt="" />
 <p class="caption">Gross Production Value Plugin Input data flow</p>
 </div>
 <p>The plugin allows the user to choose the source for both Production and Prices through two different parameters, for instance, if some data is currently unavailable in <code>Disseminated Datasets</code> it is possible to select another source for the calculation. It is worth noting that pulling data from production datasets may lead to different results with respect to the disseminated one since some of the source data may differ or miss respect to FAOSTAT data.</p>
+<div id="additional-informations" class="section level4 hasAnchor" number="3.1.1.1">
+<h4><span class="header-section-number">3.1.1.1</span> Additional informations<a href="value-of-production-plugin.html#additional-informations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>The plugin will automatically pull data for indigenous meat with element code [55100] instead of [5510]</li>
+<li>The production quantity for CPC Item <em>Other meat n.e. (excluding mammals)</em> [21170.92] will be pulled from SWS with item code [21119.90] instead.</li>
+</ul>
+</div>
 </div>
 </div>
 <div id="aggregates" class="section level2 hasAnchor" number="3.2">

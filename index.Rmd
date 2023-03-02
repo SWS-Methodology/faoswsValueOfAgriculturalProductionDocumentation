@@ -27,7 +27,7 @@ After the validation, the procedure can be applied on the corresponding producti
 
 As shown in the figure below, the general workflow of the module require that the Technical Unit store data in "Disseminated Dataset" to allow the plugin to ingest the right data.
 
-![Gross Production Value Plugin Data Flow ](./images/general_data_flow.png){ width=150% }
+![Gross Production Value Plugin Data Flow ](./images/general_workflow.jpg){ }
 
 ## Build up data for validation of procedure
 

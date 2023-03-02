@@ -50,3 +50,8 @@ countrytab
 countrygrouptab
 itemtab
 itemgrouptab
+tab:unnamed-chunk-7
+base-year-parameter
+value-of-production---log
+element-code
+additional-informations
