@@ -1,94 +1,94 @@
 # Value Of Agricultural Production - Methodology
 
-Production and producer prices are defined according to established FAO standards. For instance the concept of production may change according to the specific commodity and can be summarized as follows: 
+Production and producer prices are defined according to established FAO standards. For instance the concept of production may change according to the specific commodity and can be summarized as follows:
 
-**Crop production data** refer to the actual harvested production from field or orchard and gardens, excluding harvesting and threshing losses and the part of crop non harvested. Production includes also the quantities sold in the market (marketed production) and the quantities consumed by the producers (autoconsumption).
-Crop production is stored in metric tonnes.
+**Crop production data** refer to the actual harvested production from field or orchard and gardens, excluding harvesting and threshing losses and the part of crop non harvested. Production includes also the quantities sold in the market (marketed production) and the quantities consumed by the producers (autoconsumption). Crop production is stored in metric tonnes.
 
 **Livestock production data** is more commodity-specific, evaluated by weights and adjusted by conversion factors to provide comparable data.
 
 **Producer prices** refers to the prices received by farmers per unit, usually a metric ton of product. The producer prices are also often defined "farm gate prices", and should includes all the costs incurred by the farmers to produce the commodity and its own profit.
 
-Various approaches are considered for the definition of _Agricultural Production_, spacing from _gross_ concept to _net_ depending on the treatment of the double-counting error. The latter is defined as the error that incur when we do not remove inputs used during the production cycle. 
-Agricultural inputs are indeed divided in three categories :
+Various approaches are considered for the definition of *Agricultural Production*, spacing from *gross* concept to *net* depending on the treatment of the double-counting error. The latter is defined as the error that incur when we do not remove inputs used during the production cycle. Agricultural inputs are indeed divided in three categories :
 
-  1. commodities required as inputs for their own production, such as seed or hatching eggs;
-  2. inputs of other agricultural commodities as those used for feeding livestock;
-  3. non-agricultural inputs such fertilizers or pesticides.
+1.  commodities required as inputs for their own production, such as seed or hatching eggs;
+2.  inputs of other agricultural commodities as those used for feeding livestock;
+3.  non-agricultural inputs such fertilizers or pesticides.
 
+## Gross Production Value
 
-## Gross Production Value 
-
-Value of gross production is calculated by multiplying gross production (in tonnes) by production prices at farm gate. In this phase of aggregation the overall value of production in considered. Indeed a double-counting error rise if we do not remove seeds and feed used within the agricultural sector, we refer then to this value as "gross production". \
+Value of gross production is calculated by multiplying gross production (in tonnes) by production prices at farm gate. In this phase of aggregation the overall value of production in considered. Indeed a double-counting error rise if we do not remove seeds and feed used within the agricultural sector, we refer then to this value as "gross production".\
 Value of gross production is provided in both International Dollar [Int.\$], Standard Local Currency [SLC] and United States Dollar [US\$].\
 The gross value of production expressed in constant terms, shown in formula \@ref(eq:bp), is derived using the average prices across a base period of three years. Constant price series shows the changes in quantity or volume of the product changes over time.
 
+```{=tex}
 \begin{equation} 
 G_{t} = Q_tP_0
 
 (\#eq:bp)
 \end{equation}
+```
+Where $Q_t$ is production at time $t$ and $P_0$ is the average producer price across base period. The gross value of production in current terms considers the current producer prices at time $t$ ($P_t$) instead :
 
-Where $Q_t$ is production at time $t$ and $P_0$ is the average producer price across base period. 
-The gross value of production in current terms considers the current producer prices at time $t$ ($P_t$) instead : 
-
+```{=tex}
 \begin{equation} 
 G_{t} = Q_tP_t
 
 (\#eq:cn)
 \end{equation}
-
+```
 <br>
 
 ## Net Production Value
 
 FAO indices are based on the concept of agriculture as a single farm, therefore there is the need to subtract amounts of seed and feeds from production quantity to avoid double counting them.
 
+```{=tex}
 \begin{equation} 
 N_{t} = Q_tP_0 - S_t - F_t
 
 (\#eq:cn)
 \end{equation}
+```
+Where $Q_t$ is production at time $t$, $P_0$ is the average producer price around base year, $S_t$ the amount of seed and $F_t$ the amount of feed at time $t$.  It is worth noting that when calculating indices of agricultural, food and nonfood production, all intermediate primary inputs of agricultural origin are deducted. However, for indices of any other commodity group, only inputs originating from within the same group are deducted; thus, only seed is removed from the group "crops" and from all crop subgroups, such as cereals, oil crops, etc.; and both feed and seed originating from within the livestock sector (e.g. milk feed, hatching eggs) are removed from the group "livestock products". For the main two livestock subgroups, namely, meat and milk, only feed originating from the respective subgroup is removed.\
+In practice, item aggregation are performed as follow:
 
-Where $Q_t$ is production at time $t$, $P_0$ is the average producer price around base year, $S_t$ the amount of seed and $F_t$ the amount of feed at time $t$.\ 
-It is worth noting that when calculating indices of agricultural, food and nonfood production, all intermediate primary inputs of agricultural origin are deducted. However, for indices of any other commodity group, only inputs originating from within the same group are deducted; thus, only seed is removed from the group “crops" and from all crop subgroups, such as cereals, oil crops, etc.; and both feed and seed originating from within the livestock sector (e.g. milk feed, hatching eggs) are removed from the group “livestock products". For the main two livestock subgroups, namely, meat and milk, only feed originating from the respective subgroup is removed.\
-In practice, item aggregation are performed as follow: 
+-   Only seeds are subtracted from production quantity when computing aggregates **Cereal, Total (1717), Roots and Tubers, Total (1720), Oilcrops Primary (1730), Crops (PIN) (2041), Sugar Crops Primary (1723), Vegetables** and **Fruit Primary (1739), Fruit Primary (1738), Vegetables Primary (1735)**;
+-   Only feed is subtracted from production quantity when computing aggregates **Meat indigenous, total (1770)** and **Milk, total (1780)**
+-   Both seeds and feed are subtracted from production quantity when computing aggregates *Livestock (PIN) (2044), Agriculture (PIN) (2051), Food (PIN) (2054)* and *Non Food (PIN) (2057)*
 
-  - Only seeds are subtracted from production quantity when computing aggregates **Cereal, Total (1717), Roots and Tubers, Total (1720), Oilcrops Primary (1730), Crops (PIN) (2041), Sugar Crops Primary (1723), Vegetables** and **Fruit Primary (1739), Fruit Primary (1738), Vegetables Primary (1735)**;
-  - Only feed is subtracted from production quantity when computing aggregates **Meat indigenous, total (1770)** and **Milk, total (1780)**
-  - Both seeds and feed are subtracted from production quantity when computing aggregates *Livestock (PIN) (2044), Agriculture (PIN) (2051), Food (PIN) (2054)* and *Non Food (PIN) (2057)*
-  
 <br>
 
-## Gross Production Index Number 
+## Gross Production Index Number
 
-The Gross production index number aim is to show the relative level of agricultural production for each year with respect to the three-year base period considered. \
+The Gross production index number aim is to show the relative level of agricultural production for each year with respect to the three-year base period considered.\
 The index belongs to the Laspeyres quantity with fixed weights (Producer Prices) and its base quantity is revised regularly after 5-10 years. As stated before the base period is not a single year, but an average of three consecutive years to mitigate the year-to-year fluctuations of agricultural production.\
 The production quantity for each commodity is weighted by a constant average across the base period of the international prices obtaining the Gross Production Value for each year, then divided by the average of the gross production for the base period considered as shown in the formula \@ref(eq:in).
 
+```{=tex}
 \begin{equation} 
 V_t = \frac{Q_tP_0}{Q_0P_0}
 
 (\#eq:in)
-\end{equation} 
+\end{equation}
+```
+Where $Q_t$ is the production quantity of the single commodity in year $t$, $Q_0$ is the average production quantity across the base period and $P_0$ is the average Producer Price of the commodity across the base period. Note also that the quantity $Q_tP_0$ correspond to the Gross Production value for period $t$ and quantity $Q_0P_0$ to the average of Gross Production across base period.  The constant price approach allows the evaluation of agricultural outputs in different countries using a single set of prices for various commodities expressed in common currency units such as the International Dollar.\
+The aggregate volume of agriculture production, for a single country $j$, is obtain through the sum of individual item. For instance in case of $N$ commodities :
 
-Where $Q_t$ is the production quantity of the single commodity in year $t$, $Q_0$ is the average production quantity across the base period and $P_0$ is the average Producer Price of the commodity across the base period. Note also that the quantity $Q_tP_0$ correspond to the Gross Production value for period $t$ and quantity $Q_0P_0$ to the average of Gross Production across base period.\ 
-The constant price approach allows the evaluation of agricultural outputs in different countries using a single set of prices for various commodities expressed in common currency units such as the International Dollar.\
-The aggregate volume of agriculture production, for a single country $j$, is obtain through the sum of individual item. For instance in case of $N$ commodities : 
-
-
+```{=tex}
 \begin{equation} 
 
 V_{jt} = \sum_{i=1}^N \frac{Q_{it}P_{i0}}{Q_{i0}P_{i0}}
 
 (\#eq:ins)
-\end{equation} 
+\end{equation}
+```
+The value of the output in the $j^{th}$ country, $V_{jt}$, expressed in international dollars is now directly comparable to that of another country. These value aggregates may be summed over all countries ($N$) to calculate the value of Regional or World output.
 
-The value of the output in the $j^{th}$ country, $V_{jt}$, expressed in international dollars is now directly comparable to that of another country. These value aggregates may be summed over all countries ($N$) to calculate the value of Regional or World output. 
-
+```{=tex}
 \begin{equation}
 
 V_{t} = \sum_{i=1}^N\sum_{j=1}^M  \frac{Q_{ijt}P_{i0}}{Q_{ij0}P_{i0}}
 
 (\#eq:ins2)
-\end{equation} 
+\end{equation}
+```

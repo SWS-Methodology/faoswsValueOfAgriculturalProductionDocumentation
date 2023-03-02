@@ -1,11 +1,17 @@
 tab:unnamed-chunk-1
+eq:bp
+eq:cn
+eq:in
+eq:ins
+eq:ins2
 tab:unnamed-chunk-2
 tab:unnamed-chunk-3
 tab:unnamed-chunk-4
 tab:unnamed-chunk-5
 tab:unnamed-chunk-6
 tab:unnamed-chunk-7
-cover-image-path-to-the-social-sharing-image-like-imagescover.jpg
+tab:unnamed-chunk-8
+about
 module-workflow
 build-up-data-for-validation-of-procedure
 sws-implementation-procedure
@@ -20,6 +26,7 @@ input-data-flow
 additional-informations
 aggregates
 run-the-module
+resources
 code-lists
 datatables
 base-year-parameter
@@ -29,5 +36,3 @@ countrygrouptab
 itemtab
 itemgrouptab
 value-of-production---log
-about
-resources
