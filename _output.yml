@@ -3,6 +3,6 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">Value_of_Production</a></li>
+        <li><a href="./">Value of Agricultural Production</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">ESS Division</a></li>

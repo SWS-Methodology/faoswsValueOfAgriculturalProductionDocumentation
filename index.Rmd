@@ -8,12 +8,10 @@ header-includes:
 
 output:
 latex_engine: tinytex
-#documentclass: book
-#bibliography: [book.bib, packages.bib]
+documentclass: book
 url: https://ivansortino97.github.io/ValueOfProduction/
-# cover-image: path to the social sharing image like images/cover.jpg
+cover-image: ./images/FAO_logo.svg.png
 description:
-#link-citations: yes
 github-repo: https://github.com/IvanSortino97/ValueOfProduction
 ---
 
