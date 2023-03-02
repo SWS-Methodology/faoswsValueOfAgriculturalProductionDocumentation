@@ -1,6 +1,6 @@
 --- 
 title: "Value of Agricultural Production"
-author: "Ivan Sortino"
+author: "ivan.sortino@fao.org"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 header-includes:
@@ -10,9 +10,10 @@ output:
 latex_engine: tinytex
 documentclass: book
 url: https://ivansortino97.github.io/ValueOfProduction/
+favicon: ./images/FAO_logo.svg.ico
 cover-image: ./images/FAO_logo.svg.png
 description:
-github-repo: https://github.com/IvanSortino97/ValueOfProduction
+github-repo: https://github.com/IvanSortino97/ValueOfProduction/
 ---
 
 # About
@@ -25,7 +26,7 @@ After the validation, the procedure can be applied on the corresponding producti
 
 As shown in the figure below, the general workflow of the module require that the Technical Unit store data in "Disseminated Dataset" to allow the plugin to ingest the right data.
 
-![Gross Production Value Plugin Data Flow ](./images/general_workflow.jpg){ }
+![Gross Production Value Plugin Data Flow](./images/general_workflow.jpg){ }
 
 ## Build up data for validation of procedure
 

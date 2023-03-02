@@ -30,3 +30,4 @@ itemtab
 itemgrouptab
 value-of-production---log
 about
+resources

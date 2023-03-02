@@ -1,4 +1,4 @@
-# SWS Resources {#resources .unnumbered}
+# SWS Resources {#resources }
 
 This section enclose a detailed description of all the auxiliary resources needed by the modules to accomplish their calculation. It includes definition of code lists, used to define the various dimensions of data sets, and data tables. 
 
