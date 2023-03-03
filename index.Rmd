@@ -54,14 +54,14 @@ It is worth noting that for the sake of consistency with FAOSTAT item/country li
 
 The module will pull its data directly within the working system, allowing the user to choose the source of data both for Production data and for Annual Producer Prices. For instance, if Disseminated Datasets source is not selected:
 
-  - Production data in tonnes (_element 5510/55100_) are pulled from  `agriculture` domain, dataset `aproduction`;
+  - Production data in tonnes (_element 5510/55100_) are pulled from  `Agriculture Production` domain, dataset `Agriculture Production`;
   
-  - Annual Producer Prices data for Standard Local Currency (_element 5531_) and US Dollar (_element 5532_) are pulled from `producer prices` domain, dataset `annual_producer_prices_validation` 
+  - Annual Producer Prices data for Standard Local Currency (_element 5531_) and US Dollar (_element 5532_) are pulled from `Producer Prices` domain, dataset `Annual Producer Prices (Validated)` 
   
-  - Annual Producer Prices data for International Dollar (_element 5533_) are pulled from `producer prices` domain,  dataset `international dollar prices`.
+  - Annual Producer Prices data for International Dollar (_element 5533_) are pulled from `Producer Prices` domain,  dataset `International dollar prices`.
   
 If Disseminated Datasets source is selected, the plugin will pull its data from the corresponding datasets of the "Disseminated Datasets" domain, however since International dollar prices are not disseminated, they will be always fetched in "Producer Prices" domain.\
-For the calculation of the element 434 "Gross per capita Production Index Number" the plugin will require also the total population by sex, element 511 from `Population Disseminated` of `disseminated dataset` domain. \
+For the calculation of the element 434 "Gross per capita Production Index Number" the plugin will require also the total population by sex, element 511 from `Population Disseminated` of `Disseminated datasets` domain. \
 
 <br>
 

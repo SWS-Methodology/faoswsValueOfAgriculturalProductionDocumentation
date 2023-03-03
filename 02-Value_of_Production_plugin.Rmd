@@ -58,6 +58,6 @@ It is important that the technical unit validate those table to ensure that they
   
 ![Running Plugin](./images/SWS_first2.png){#screenuno scale=110% }
 
-  5. Select the parameters: base year, level of aggregation and Data sources. The user can also choose the execution method for the plugin, if many elements and long time-span are selected, it is suggested to choose the "send me an email" option since it can take a few hours to run entirely. 
+  5. Select the parameters: level of aggregation and Data sources. The user can also choose the execution method for the plugin, if many elements and long time-span are selected, it is suggested to choose the "send me an email" option since it can take a few hours to run entirely. 
   
 ![Plugin parameters](./images/SWS_sec.png){ scale=110% }  

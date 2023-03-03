@@ -23,7 +23,7 @@
 <meta name="author" content="ivan.sortino@fao.org" />
 
 
-<meta name="date" content="2023-03-02" />
+<meta name="date" content="2023-03-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -128,7 +128,7 @@
 <div id="header">
 <h1 class="title">Value of Agricultural Production</h1>
 <p class="author"><em><a href="mailto:ivan.sortino@fao.org" class="email">ivan.sortino@fao.org</a></em></p>
-<p class="date"><em>2023-03-02</em></p>
+<p class="date"><em>2023-03-03</em></p>
 </div>
 <div id="about" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> About<a href="index.html#about" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -162,12 +162,12 @@ After the validation, the procedure can be applied on the corresponding producti
 It is worth noting that for the sake of consistency with FAOSTAT item/country list and for calculation of the aggregates, the plugin will always return values for all the countries and items specified into the supporting data table <code>"Value of production - Countries"</code> and <code>"Value of Production - Item"</code></p>
 <p>The module will pull its data directly within the working system, allowing the user to choose the source of data both for Production data and for Annual Producer Prices. For instance, if Disseminated Datasets source is not selected:</p>
 <ul>
-<li><p>Production data in tonnes (<em>element 5510/55100</em>) are pulled from <code>agriculture</code> domain, dataset <code>aproduction</code>;</p></li>
-<li><p>Annual Producer Prices data for Standard Local Currency (<em>element 5531</em>) and US Dollar (<em>element 5532</em>) are pulled from <code>producer prices</code> domain, dataset <code>annual_producer_prices_validation</code></p></li>
-<li><p>Annual Producer Prices data for International Dollar (<em>element 5533</em>) are pulled from <code>producer prices</code> domain, dataset <code>international dollar prices</code>.</p></li>
+<li><p>Production data in tonnes (<em>element 5510/55100</em>) are pulled from <code>Agriculture Production</code> domain, dataset <code>Agriculture Production</code>;</p></li>
+<li><p>Annual Producer Prices data for Standard Local Currency (<em>element 5531</em>) and US Dollar (<em>element 5532</em>) are pulled from <code>Producer Prices</code> domain, dataset <code>Annual Producer Prices (Validated)</code></p></li>
+<li><p>Annual Producer Prices data for International Dollar (<em>element 5533</em>) are pulled from <code>Producer Prices</code> domain, dataset <code>International dollar prices</code>.</p></li>
 </ul>
 <p>If Disseminated Datasets source is selected, the plugin will pull its data from the corresponding datasets of the “Disseminated Datasets” domain, however since International dollar prices are not disseminated, they will be always fetched in “Producer Prices” domain.<br />
-For the calculation of the element 434 “Gross per capita Production Index Number” the plugin will require also the total population by sex, element 511 from <code>Population Disseminated</code> of <code>disseminated dataset</code> domain.<br />
+For the calculation of the element 434 “Gross per capita Production Index Number” the plugin will require also the total population by sex, element 511 from <code>Population Disseminated</code> of <code>Disseminated datasets</code> domain.<br />
 </p>
 <p><br></p>
 <p>For the correct functioning of the module it is important to ensure that the read permissions on the datasets mentioned above are correctly guaranteed.</p>
