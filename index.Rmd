@@ -9,11 +9,11 @@ header-includes:
 output:
 latex_engine: tinytex
 documentclass: book
-url: https://ivansortino97.github.io/ValueOfProduction/
+url: https://github.com/SWS-Methodology/faoswsValueOfAgriculturalProductionDocumentation
 favicon: ./images/FAO_logo.svg.ico
 cover-image: ./images/FAO_logo.svg.png
 description:
-github-repo: https://github.com/IvanSortino97/ValueOfProduction/
+github-repo: https://github.com/SWS-Methodology/faoswsValueOfAgriculturalProductionDocumentation
 ---
 
 # About
