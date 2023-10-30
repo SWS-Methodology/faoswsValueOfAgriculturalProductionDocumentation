@@ -22,6 +22,10 @@ The aim of this module is to calculate the Value of Agriculture production withi
 In order to perform the validation, disseminated data needs to be available within SWS in the corresponding dataset of _Dissiminated Dataset_ Domain.
 After the validation, the procedure can be applied on the corresponding production value and prices presents within the system and stored in a new "Value of Production" dataset.
 
+## Agriculture Production Validated 
+
+To validate the module, a data cleaning and harmonization process was carried out in October 2023, aligning the data from both FAOSTAT, `Agriculture Production` dataset and `Agriculture Production - Validated` dataset. The primary objective of this activity was to guarantee consistency in the data points between the Production live dataset and the FAOSTAT dissemination platform. The revisions primarily focused on data from the period spanning 1961 to 1990, where FAOSTAT had previously reported an older version of the Production Data.
+ 
 ## Module Workflow 
 
 As shown in the figure below, the general workflow of the module require that the Technical Unit store data in "Disseminated Dataset" to allow the plugin to ingest the right data.
